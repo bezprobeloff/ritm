@@ -1,0 +1,28 @@
+@import '../../../styles/_variables.scss';
+
+.web {
+  width: 100%;
+  margin-bottom: 160px;
+  display: flex;
+  flex-direction: column;
+
+  &_title {
+    max-width: 914px;
+  }
+
+  &__list {
+
+  }
+
+  &__item-title {
+    margin: 0 0 20px;
+    @include font_text(32px, 1.25, $WHITE_TITLE, 500);
+    text-align: left;
+  }
+
+  &__item-description {
+    margin: 0;
+    @include font_text(24px, 1.33, $GRAY_TEXT);
+    text-align: left;
+  }
+}

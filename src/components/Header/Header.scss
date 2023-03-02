@@ -1,0 +1,42 @@
+@import '../../styles/_variables.scss';
+
+.header {
+  display: flex;
+  width: $DESKTOP;
+  padding: 22px 87px;
+
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 111px;
+    height: 24px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &-link {
+      margin-left: 24px;
+      @include font_text(18px, 1.33, $GRAY_NAV, 500);
+      text-decoration: none;
+    }
+
+    &-link-project {
+      margin-left: 32px;
+      padding: 16px 40px;
+      @include font_text(18px, 1.33, $WHITE, 500);
+      text-decoration: none;
+      background-color: $BLUE;
+      border-radius: 14px;
+    }
+  }
+
+}
+

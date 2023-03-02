@@ -1,21 +1,31 @@
-$GREEN: #2BE080;
-$BLUE: #465DFF;
-$GRAY_TEXT: #A0A0A0;
-$GRAY_ELEMENT: #E8E8E8;
-$ORANGE: #FF6838;
-$PINK: #EE3465;
+$BLACK: #000401;
+$WHITE: #FFFFFF;
+$WHITE_TITLE: #FDFDFD;
+$WHITE_INPUT: #F6F6F6;
+
+
+$BLUE: #056DEA;
+$BLACK_BLUE: #10141F;
+$BLACK_BLUE_LIGHT: #05090B;
+$GRAY_NAV: #CFD0D3;
+$GRAY_TEXT: #9EA0A4;
+$GRAY_TEXT_FAQ: #BABABA;
+$GRAY_DARK: #818181;
+
+$DESKTOP: 1440px;
+
+
 $MOBILE: 320px;
 $PAD: 768px;
 $PAD_WITHOUT: $PAD - 1px;
-$DESKTOP: 1280px;
 $DESKTOP_WITHOUT: $DESKTOP - 1px;
 
-@mixin font_text($size, $lineHeight, $color: black, $weight: 400) {
+@mixin font_text($size, $lineHeight, $color: $WHITE, $weight: 400) {
   font: {
     style: normal;
     weight: $weight;
     size: $size;
   }
-  line-height: calc(round(calc($lineHeight / $size) * 100) / 100);
+  line-height: $lineHeight;
   color: $color;
 }

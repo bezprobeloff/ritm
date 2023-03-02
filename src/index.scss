@@ -1,11 +1,12 @@
 @import './vendor/normalize.css';
 @import './vendor/fonts/font.css';
+@import './styles/_variables.scss';
 
 .page {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Onest', Arial, sans-serif;
   font-style: normal;
-  color: #000000;
-  background-color: #ffffff;
+  color: $WHITE;
+  background-color: $BLACK;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;

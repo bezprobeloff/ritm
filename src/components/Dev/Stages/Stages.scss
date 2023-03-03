@@ -1,0 +1,60 @@
+@import '../../../styles/_variables.scss';
+
+.stages {
+  width: 100%;
+  margin-bottom: 160px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 60px;
+    max-width: 728px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    row-gap: 77px;
+    align-items: start;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+
+    &-text-wrap {
+      display: flex;
+      flex-direction: column;
+      padding-top: 35px;
+      width: 512px;
+    }
+
+    &-title {
+      margin: 0 0 14px;
+      @include font_text(24px, 1.33, $WHITE, 500);
+      text-align: left;
+    }
+
+    &-description {
+      margin: 0 0 24px;
+      @include font_text(18px, 1.33, $GRAY_TEXT);
+      text-align: left;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-image-wrap {
+      width: 510px;
+      height: 280px;
+      background: #05090B;
+      border: 1.65484px solid $BLACK_BLUE;
+      border-radius: 33.0968px;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import './Main.scss';
 import Techs from '../Techs/Techs';
+import Dev from '../Dev/Dev';
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
         , которые помогают оптимизировать бизнес-процессы и решить сложные управленческие задачи
       </h1>
       <Techs />
+      <Dev />
     </main>
   );
 };

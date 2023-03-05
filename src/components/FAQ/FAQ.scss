@@ -1,0 +1,37 @@
+@import '../../styles/_variables.scss';
+
+.faq {
+  &__subtitle {
+    margin: 0 0 60px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  &__details {
+    padding: 0 0 32px;
+    border-bottom: 1px solid $GRAY_LINE;
+  }
+
+  &__question {
+    &::-webkit-details-marker {
+      display: none;
+    }
+    width: 829px;
+    list-style: none;
+    @include font_text(24px, 1.33, $WHITE, 500);
+    text-align: left;
+  }
+
+  &__answer {
+    margin: 0;
+    padding-top: 24px;
+    width: 939px;
+    @include font_text(18px, 1.33, $GRAY_TEXT_FAQ);
+    text-align: left;
+  }
+
+}

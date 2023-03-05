@@ -1,0 +1,44 @@
+@import '../../styles/_variables.scss';
+
+.contacts {
+  &__wrapper {
+    padding: 0 86px;
+  }
+
+  &__subtitle {
+    margin: 0 0 60px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  &__item {
+    margin: 0;
+    display: flex;
+    @include font_text(24px, 1.33, $WHITE);
+    text-align: left;
+
+    &-icon {
+      width: 36px;
+      &_type_mobile {
+        background-image: url("../../images/icon-phone.svg");
+        background-repeat: no-repeat;
+        background-size: 22.2px 22.2px;
+        background-position: 0 center;
+      }
+
+      &_type_email {
+        background-image: url("../../images/icon-mail.svg");
+        background-repeat: no-repeat;
+        background-size: 21.5px 15.5px;
+        background-position: 0 center;
+      }
+    }
+
+    &_type_email {
+
+    }
+  }
+}

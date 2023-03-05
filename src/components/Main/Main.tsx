@@ -2,6 +2,7 @@ import "./Main.scss";
 import Techs from "../Techs/Techs";
 import Dev from "../Dev/Dev";
 import Process from "../Process/Process";
+import Feedback from "../Feedback/Feedback";
 
 const Main = () => {
   return (
@@ -16,6 +17,7 @@ const Main = () => {
       <Techs />
       <Dev />
       <Process />
+      <Feedback />
     </main>
   );
 };

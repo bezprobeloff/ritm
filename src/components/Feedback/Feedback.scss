@@ -1,0 +1,59 @@
+@import '../../styles/_variables.scss';
+
+.feedback {
+  &__wrapper {
+    padding: 0 88px;
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+  }
+  &__description {
+    max-width: 666px;
+    @include font_text(18px, 1.33, $GRAY_TEXT);
+    margin: 0;
+    text-align: left;
+  }
+
+  &__form {
+    width: 837px;
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 25px;
+    row-gap: 24px;
+
+    &-input {
+      padding: 16px 18px;
+      border: 1px solid $GRAY_TEXT;
+      border-radius: 14px;
+      background-color: transparent;
+      @include font_text(18px, 1.33, $WHITE_INPUT);
+    }
+
+    &-textarea {
+      grid-row: span 2;
+    }
+
+    &__checkbox {
+      &-switcher {
+
+      }
+
+      &-text {
+
+      }
+    }
+
+    &-button-submit {
+      padding: 16px 40px;
+      margin-top: 43px;
+      grid-column: span 2;
+      background-color: $BLUE;
+      border: none;
+      border-radius: 14px;
+      @include font_text(18px, 1.33, $WHITE, 500);
+      text-align: center;
+    }
+  }
+}

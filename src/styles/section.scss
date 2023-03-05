@@ -1,14 +1,20 @@
 @import './variables';
 
 .section {
-  width: $DESKTOP;
+  width: 100%;
   margin-bottom: 160px;
-  padding: 0 84px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   align-items: center;
 
+  &__wrapper {
+    width: $DESKTOP;
+    padding: 0 84px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
 
   &__title {
     padding: 6px 10px;

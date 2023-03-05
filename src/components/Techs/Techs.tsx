@@ -1,5 +1,5 @@
-import './Techs.scss';
 import '../../styles/section.scss';
+import './Techs.scss';
 import Web from './Web/Web';
 import Advantage from './Advantage/Advantage';
 const Techs = () => {

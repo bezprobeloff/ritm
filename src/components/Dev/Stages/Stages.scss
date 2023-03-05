@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    row-gap: 77px;
+    row-gap: 80px;
     align-items: start;
     list-style-type: none;
   }
@@ -24,13 +24,13 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, auto);
+    column-gap: 24px;
     justify-content: space-between;
 
     &-text-wrap {
       display: flex;
       flex-direction: column;
-      padding-top: 35px;
-      width: 512px;
+      padding-top: 20px;
     }
 
     &-title {
@@ -40,8 +40,8 @@
     }
 
     &-description {
-      margin: 0 0 24px;
-      @include font_text(18px, 1.33, $GRAY_TEXT);
+      margin: 0 0 32px;
+      @include font_text(24px, 1.33, $GRAY_TEXT);
       text-align: left;
 
       &:last-child {
@@ -50,7 +50,7 @@
     }
 
     &-image-wrap {
-      width: 510px;
+      width: 517px;
       height: 280px;
       background: #05090B;
       border: 1.65484px solid $BLACK_BLUE;

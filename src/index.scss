@@ -2,6 +2,10 @@
 @import './vendor/fonts/font.css';
 @import './styles/_variables.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 .page {
   font-family: 'Onest', Arial, sans-serif;
   font-style: normal;

@@ -1,0 +1,48 @@
+@import '../../../styles/_variables.scss';
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    max-width: 866px;
+  }
+
+  &__list {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 27px;
+    row-gap: 40px;
+  }
+
+  &__item {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    &-number {
+      &-wrapper {
+        margin: 0 0 32px;
+        width: 42px;
+        height: 42px;
+        align-self: end;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $BLUE;
+        border-radius: 60px;
+      }
+      margin: 0;
+      @include font_text(18px, 24px, $WHITE);
+
+    }
+    &-title {
+      color: $WHITE;
+      text-align: left;
+    }
+
+    &-description {
+      @include font_text(18px, 24px, $GRAY_TEXT);
+      text-align: left;
+    }
+  }
+}

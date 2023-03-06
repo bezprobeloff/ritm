@@ -4,16 +4,24 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 160px;
+  margin-top: 33px;
   background-color: $BLACK_BLUE;
 
+  @media screen and (min-width: $DESKTOP){
+    margin-top: 160px;
+  }
+
   &__list {
-    width: $DESKTOP;
-    padding: 56px 0 55px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 160px;
+
+    @media screen and (min-width: $DESKTOP){
+      width: $DESKTOP;
+      padding: 56px 0 55px;
+      column-gap: 160px;
+    }
   }
 
   &__item {

@@ -1,8 +1,11 @@
 @import '../../styles/_variables.scss';
 
 .techs {
-  width: $DESKTOP;
-  padding: 0 84px;
-  margin-top: 160px;
-
+  padding: 0 18px;
+  margin-top: 80px;
+  @media screen and (min-width: $DESKTOP){
+    width: $DESKTOP;
+    padding: 0 84px;
+    margin-top: 160px;
+  }
 }

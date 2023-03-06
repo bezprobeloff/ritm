@@ -7,6 +7,7 @@ const Header = () => {
       <a href='/' className='header__logo-link'>
         <img src={logo} className='header__logo' alt='Логотип' />
       </a>
+      <button className='header__button-menu' />
       <nav className='header__nav'>
         <a href='/' className='header__nav-link'>
           О компании

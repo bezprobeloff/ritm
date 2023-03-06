@@ -18,6 +18,16 @@
     height: 24px;
   }
 
+  &__button-menu {
+    @media screen and (min-width: $MOBILE){
+
+    }
+
+    @media screen and (min-width: $DESKTOP){
+      display: none;
+    }
+  }
+
   &__nav {
     display: flex;
     align-items: center;

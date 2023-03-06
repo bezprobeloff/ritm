@@ -1,5 +1,9 @@
 import '../../../styles/section.scss';
 import './Stages.scss';
+import imageStep1 from '../../../images/image-step1.svg';
+import imageStep2 from '../../../images/image-step2.svg';
+import imageStep3 from '../../../images/image-step3.svg';
+import imageStep4 from '../../../images/image-step4.svg';
 
 const Stages = () => {
   return (
@@ -20,8 +24,12 @@ const Stages = () => {
               адаптивным дизайном.
             </p>
           </div>
-          <div className='stages__item-image-wrap'>
-            <img />
+          <div className='stages__item-image-wrapper stages__item-image-wrapper_type_first'>
+            <img
+              className='stages__item-image stages__item-image_type_first'
+              src={imageStep1}
+              alt='Картинка устройств'
+            />
           </div>
         </li>
         <li className='stages__item'>
@@ -35,8 +43,12 @@ const Stages = () => {
               Оба блока работают в единой экосистеме и не конфликтуют между собой.
             </p>
           </div>
-          <div className='stages__item-image-wrap'>
-            <img />
+          <div className='stages__item-image-wrapper stages__item-image-wrapper_type_second'>
+            <img
+              className='stages__item-image stages__item-image_type_second'
+              src={imageStep2}
+              alt='Картинка устройств'
+            />
           </div>
         </li>
         <li className='stages__item'>
@@ -51,8 +63,12 @@ const Stages = () => {
               задачи.
             </p>
           </div>
-          <div className='stages__item-image-wrap'>
-            <img />
+          <div className='stages__item-image-wrapper stages__item-image-wrapper_type_third'>
+            <img
+              className='stages__item-image stages__item-image_type_third'
+              src={imageStep3}
+              alt='Картинка устройств'
+            />
           </div>
         </li>
         <li className='stages__item'>
@@ -67,8 +83,12 @@ const Stages = () => {
               компании.
             </p>
           </div>
-          <div className='stages__item-image-wrap'>
-            <img />
+          <div className='stages__item-image-wrapper stages__item-image-wrapper_type_fourth'>
+            <img
+              className='stages__item-image stages__item-image_type_fourth'
+              src={imageStep4}
+              alt='Картинка устройств'
+            />
           </div>
         </li>
       </ul>

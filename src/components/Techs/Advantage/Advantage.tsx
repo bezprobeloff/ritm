@@ -14,7 +14,7 @@ const Advantage = () => {
           <img className='advantage__item-icon' src={iconBox} alt='Коробки' />
           <p className='advantage__item-title'>Модульность</p>
           <p className='advantage__item-description'>
-            веб-приложение состоит из независимых частей, разрабатываемых в зависимости от текущих
+            веб-приложение состоит из независимых частей, разрабатываемых в зависимости от текущих
             задач
           </p>
         </li>
@@ -29,14 +29,14 @@ const Advantage = () => {
           <img className='advantage__item-icon' src={iconDevices} alt='Устройства' />
           <p className='advantage__item-title'>Универсальность</p>
           <p className='advantage__item-description'>
-            веб-приложение работает на любом современном устройстве и доступно из любой точки
+            веб-приложение работает на любом современном устройстве и доступно из любой точки
           </p>
         </li>
         <li className='section__item'>
           <img className='advantage__item-icon' src={iconInternet} alt='Интернет' />
           <p className='advantage__item-title'>Кроссплатформенность</p>
           <p className='advantage__item-description'>
-            веб-приложение позволяет интегрировать любое устройство с выходом в сеть в экосистему
+            веб-приложение позволяет интегрировать любое устройство с выходом в сеть в экосистему
             компании
           </p>
         </li>

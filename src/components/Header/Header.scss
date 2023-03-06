@@ -3,7 +3,7 @@
 .header {
   display: flex;
   width: $DESKTOP;
-  padding: 22px 87px;
+  padding: 24px 87px;
 
   justify-content: space-between;
   align-items: center;
@@ -21,10 +21,12 @@
   &__nav {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: flex-end;
 
     &-link {
       margin-left: 24px;
-      @include font_text(18px, 1.33, $GRAY_NAV, 500);
+      @include font_text(18px, 1.33, $GRAY_NAV, 700);
       text-decoration: none;
     }
 

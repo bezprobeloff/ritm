@@ -1,10 +1,5 @@
 import "./Steps.scss";
 
-import iconBox from "../../../images/icon-box.svg";
-import iconBrowser from "../../../images/icon-browser.svg";
-import iconDevices from "../../../images/icon-devices.svg";
-import iconInternet from "../../../images/icon-internet.svg";
-
 const Steps = () => {
   return (
     <div className="steps">
@@ -16,7 +11,6 @@ const Steps = () => {
           <div className="steps__item-number-wrapper">
             <p className="steps__item-number">1</p>
           </div>
-
           <p className="advantage__item-title steps__item-title">
             Постановка задачи
           </p>

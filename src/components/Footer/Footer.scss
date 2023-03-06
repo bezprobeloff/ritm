@@ -1,0 +1,47 @@
+@import '../../styles/_variables.scss';
+
+.footer {
+  display: flex;
+  width: $DESKTOP;
+  padding: 75px 87px 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 111px;
+    height: 24px;
+  }
+
+  &__nav {
+    margin-left: 250px;
+    display: flex;
+    align-items: center;
+    flex: 2;
+    justify-content: start;
+    column-gap: 40px;
+
+    &-link {
+      @include font_text(18px, 1.33, $GRAY_DARK);
+      text-align: center;
+      text-decoration: none;
+    }
+
+  }
+
+  &__copyright {
+    width: 100%;
+    margin-top: 49px;
+    @include font_text(18px, 1.11, $GRAY_DARK);
+    text-align: center;
+
+    &-link {
+      @include font_text(18px, 1.11, $GRAY_DARK);
+    }
+  }
+}

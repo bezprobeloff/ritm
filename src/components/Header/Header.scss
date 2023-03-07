@@ -1,6 +1,6 @@
 @import '../../styles/_variables.scss';
 
-@mixin menu-icon($height, $width, $top) {
+@mixin menu-icon ($height, $width, $top) {
   transition-duration: 0.5s;
   position: absolute;
   height: $height;
@@ -11,7 +11,7 @@
   background-color: $WHITE;
 }
 
-@mixin menu-icon-before($height, $width, $top) {
+@mixin menu-icon-before ($height, $width, $top) {
   transition-duration: 0.5s;
   position: absolute;
   width: $width;
@@ -23,7 +23,7 @@
   left: 0;
 }
 
-@mixin menu-icon-after($height, $width, $top) {
+@mixin menu-icon-after ($height, $width, $top) {
   transition-duration: 0.5s;
   position: absolute;
   width: $width;
@@ -36,6 +36,7 @@
 }
 
 .header {
+  position: relative;
   display: flex;
   width: $MOBILE;
   padding: 19px 19px 0;
@@ -52,11 +53,13 @@
   }
 
   &__logo-link {
+    z-index: 1;
     display: flex;
     flex: 1;
 
     @media screen and (min-width: $DESKTOP){
       flex: 0;
+      z-index: 0;
     }
   }
 
@@ -69,6 +72,7 @@
     position: relative;
     width: 28px;
     height: 16px;
+    z-index: 1;
     background-color: transparent;
     border: none;
 
@@ -109,6 +113,23 @@
   &__nav {
     display: none;
 
+    @media screen and (min-width: $MOBILE)
+      and (max-width: $DESKTOP_WITHOUT){
+      &_opened {
+        position: absolute;
+        width: 100%;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+        padding-top: 108px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 56px;
+        background-color: $BLACK;
+      }
+    }
+
     @media screen and (min-width: $DESKTOP){
       display: flex;
       align-items: center;
@@ -117,9 +138,13 @@
     }
 
     &-link {
-      margin-left: 24px;
+      margin-left: 18px;
       @include font_text(18px, 1.33, $GRAY_NAV, 700);
       text-decoration: none;
+
+      @media screen and (min-width: $DESKTOP){
+        margin-left: 24px;
+      }
     }
 
   }

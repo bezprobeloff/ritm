@@ -10,7 +10,7 @@ const Header = () => {
       <button className="header__button-menu">
         <span className="header__button-menu-icon" />
       </button>
-      <nav className="header__nav header__nav_opened">
+      <nav className="header__nav">
         <a href="/" className="header__nav-link">
           О компании
         </a>

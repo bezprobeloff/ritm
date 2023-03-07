@@ -13,9 +13,12 @@
     align-self: center;
     text-align: center;
 
-    @media screen and (min-width: $MOBILE)
-      and (max-width: $DESKTOP_WITHOUT){
+    @media screen and (min-width: $MOBILE) {
       margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $PAD) {
+      margin-bottom: 40px;
     }
 
     @media screen and (min-width: $DESKTOP){
@@ -32,6 +35,10 @@
     row-gap: 19px;
     list-style-type: none;
 
+    @media screen and (min-width: $PAD){
+      row-gap: 16px;
+    }
+
     @media screen and (min-width: $DESKTOP){
       row-gap: 40px;
     }
@@ -44,9 +51,13 @@
     border: 2px solid $BLACK_BLUE;
     border-radius: 18px;
 
+    @media screen and (min-width: $PAD){
+      padding: 24px;
+      border-radius: 24px;
+    }
+
     @media screen and (min-width: $DESKTOP){
       padding: 38px 40px;
-      border-radius: 24px;
     }
 
     &-icon-wrapper {
@@ -56,6 +67,12 @@
       background-image: url("../../../images/icon-check.svg");
       background-size: contain;
       background-repeat: no-repeat;
+
+      @media screen and (min-width: $PAD){
+        width: 32px;
+        height: 32px;
+        margin-right: 24px;
+      }
 
       @media screen and (min-width: $DESKTOP){
         width: 42px;
@@ -69,6 +86,11 @@
       margin: 0;
       @include font_text(16px, 1.38, $WHITE_TITLE);
       text-align: left;
+
+      @media screen and (min-width: $PAD){
+        font-size: 18px;
+        line-height: 1.33;
+      }
 
       @media screen and (min-width: $DESKTOP){
         font-size: 24px;

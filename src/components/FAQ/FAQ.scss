@@ -3,6 +3,11 @@
 .faq {
   &__subtitle {
     margin: 0 0 32px;
+
+    @media screen  and (min-width: $PAD){
+      @include font_text(40px, 1.35, $WHITE, 500);
+    }
+
     @media screen  and (min-width: $DESKTOP){
       margin: 0 0 60px;
     }
@@ -13,7 +18,7 @@
     flex-direction: column;
     row-gap: 20px;
 
-    @media screen  and (min-width: $DESKTOP){
+    @media screen  and (min-width: $PAD){
       row-gap: 32px;
     }
   }
@@ -23,14 +28,17 @@
     padding: 0 34px 32px 0;
     border-bottom: 1px solid $GRAY_LINE;
 
-
-    @media screen  and (min-width: $DESKTOP){
+    @media screen  and (min-width: $PAD){
       padding: 0 0 32px;
     }
   }
 
   &__details[open] {
-    padding-bottom: 20px;
+    @media screen and (min-width: $MOBILE)
+      and (max-width: $PAD_WITHOUT){
+      padding-bottom: 20px;
+    }
+
   }
 
   &__question {
@@ -40,7 +48,6 @@
     }
 
     list-style: none;
-
 
     @media screen and (min-width: $DESKTOP){
 
@@ -61,7 +68,7 @@
       z-index: 100;
       transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
 
-      @media screen and (min-width: $DESKTOP){
+      @media screen and (min-width: $PAD){
         top: 21px;
         right: -21px;
         width: 42px;
@@ -78,7 +85,7 @@
         width: 12px;
         background: white;
 
-        @media screen and (min-width: $DESKTOP){
+        @media screen and (min-width: $PAD){
           width: 20px;
           height: 2px;
         }
@@ -94,7 +101,7 @@
         width: 1px;
         background: white;
 
-        @media screen and (min-width: $DESKTOP){
+        @media screen and (min-width: $PAD){
           height: 20px;
           width: 2px;
         }
@@ -106,13 +113,15 @@
       @include font_text(18px, 1.33, $WHITE, 500);
       text-align: left;
 
+      @media screen and (min-width: $PAD){
+        max-width: 560px;
+        font-size: 24px;
+      }
 
       @media screen and (min-width: $DESKTOP){
         max-width: 829px;
-        font-size: 24px;
       }
     }
-
   }
 
   &__details[open] &__question-icon {
@@ -123,7 +132,6 @@
     }
   }
 
-
   &__answer {
     margin: 0;
     padding-top: 12px;
@@ -131,11 +139,15 @@
     @include font_text(16px, 1.38, $GRAY_TEXT_FAQ);
     text-align: left;
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $PAD){
       padding-top: 24px;
-      width: 939px;
+      width: 560px;
       font-size: 18px;
       line-height: 1.33;
+    }
+
+    @media screen and (min-width: $DESKTOP){
+      width: 939px;
     }
   }
 

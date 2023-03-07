@@ -3,6 +3,12 @@
 .techs {
   padding: 0 18px;
   margin-top: 80px;
+
+  @media screen and (min-width: $PAD){
+    padding: 0 46px;
+    margin-top: 220px;
+  }
+
   @media screen and (min-width: $DESKTOP){
     width: $DESKTOP;
     padding: 0 84px;

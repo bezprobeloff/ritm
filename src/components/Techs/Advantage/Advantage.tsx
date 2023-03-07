@@ -11,7 +11,7 @@ const Advantage = () => {
       <h3 className="section__subtitle advantage__title">
         Основные преимущества наших решений
       </h3>
-      <ul className="section__list">
+      <ul className="section__list advantage__list">
         <li className="section__item advantage__item">
           <img className="advantage__item-icon" src={iconBox} alt="Коробки" />
           <p className="advantage__item-title">Модульность</p>

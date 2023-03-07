@@ -3,6 +3,10 @@
 .contacts {
   margin-bottom: 43px;
 
+  @media screen and (min-width: $PAD){
+    margin-bottom: 80px;
+  }
+
   @media screen and (min-width: $DESKTOP){
     margin-bottom: 214px;
   }
@@ -15,6 +19,12 @@
 
   &__subtitle {
     margin: 0 0 26px;
+
+    @media screen and (min-width: $PAD){
+      margin: 0 0 32px;
+      @include font_text(40px, 1.35, $WHITE, 500);
+    }
+
     @media screen and (min-width: $DESKTOP){
       margin: 0 0 60px;
     }
@@ -36,7 +46,7 @@
     @include font_text(18px, 1.33, $WHITE);
     text-align: left;
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $PAD){
       font-size: 24px;
     }
 

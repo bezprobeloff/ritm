@@ -1,26 +1,44 @@
 @import '../../styles/_variables.scss';
 
 .contacts {
-  margin-bottom: 214px;
+  margin-bottom: 43px;
+
+  @media screen and (min-width: $DESKTOP){
+    margin-bottom: 214px;
+  }
+
   &__wrapper {
-    padding: 0 86px;
+    @media screen and (min-width: $DESKTOP){
+      padding: 0 86px;
+    }
   }
 
   &__subtitle {
-    margin: 0 0 60px;
+    margin: 0 0 26px;
+    @media screen and (min-width: $DESKTOP){
+      margin: 0 0 60px;
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
+
+    @media screen and (min-width: $DESKTOP){
+
+    }
   }
 
   &__item {
     margin: 0;
     display: flex;
-    @include font_text(24px, 1.33, $WHITE);
+    @include font_text(18px, 1.33, $WHITE);
     text-align: left;
+
+    @media screen and (min-width: $DESKTOP){
+      font-size: 24px;
+    }
 
     &-icon {
       width: 36px;
@@ -37,10 +55,6 @@
         background-size: 21.5px 15.5px;
         background-position: 0 center;
       }
-    }
-
-    &_type_email {
-
     }
   }
 }

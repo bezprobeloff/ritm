@@ -1,5 +1,40 @@
 @import '../../styles/_variables.scss';
 
+@mixin menu-icon($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  border-radius: 5px;
+  top: $top;
+  left: 0;
+  background-color: $WHITE;
+}
+
+@mixin menu-icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $WHITE;
+  border-radius: 5px;
+  content: "";
+  top: $top;
+  left: 0;
+}
+
+@mixin menu-icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $WHITE;
+  border-radius: 5px;
+  content: "";
+  top: $top;
+  left: 0;
+}
+
 .header {
   display: flex;
   width: $MOBILE;
@@ -31,8 +66,39 @@
   }
 
   &__button-menu {
-    @media screen and (min-width: $MOBILE){
+    position: relative;
+    width: 28px;
+    height: 16px;
+    background-color: transparent;
+    border: none;
 
+    &-icon {
+      @include menu-icon(3px, 24px, 6px);
+
+      &:before{
+        @include menu-icon-before(3px, 24px, -7px);
+      }
+
+      &:after{
+        @include menu-icon-after(3px, 24px, 7px);
+      }
+    }
+
+    &_opened  &-icon {
+      transition-duration: 0.5s;
+      background: transparent;
+
+      &:before{
+        transform: rotateZ(45deg) scaleX(1) translate(5px, 6px);
+      }
+
+      &:after{
+        transform: rotateZ(-45deg) scaleX(1) translate(4px, -5px);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
     }
 
     @media screen and (min-width: $DESKTOP){

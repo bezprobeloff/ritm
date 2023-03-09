@@ -31,9 +31,12 @@
   &__item {
     padding: 12px;
 
-    @media screen and (min-width: $PAD)
-    and (max-width: $DESKTOP_WITHOUT){
+    @media screen and (min-width: $PAD) {
       padding: 24px;
+    }
+
+    @media screen and (min-width: $DESKTOP) {
+      padding: 40px;
     }
     &-icon {
       width: 42px;

@@ -1,9 +1,11 @@
 import './Feedback.scss';
+import { ReactComponent as FormLine } from '../../images/form-line.svg';
 
 const Feedback = () => {
   return (
     <section className='section feedback'>
       <div className='section__wrapper feedback__wrapper'>
+        <FormLine className='feedback__line' />
         <h2 className='section__title'>Форма обратной связи</h2>
         <h3 className='section__subtitle feedback__subtitle'>Получить консультацию</h3>
         <p className='feedback__description'>

@@ -1,6 +1,18 @@
 @import '../../styles/_variables.scss';
 
+// анимация линии
+@keyframes tech-line {
+  100% {stroke-dasharray:3500,0;}
+}
+
+// класс для svg-линии
+.tech-line {
+  stroke-dasharray:0,3500;
+  animation: tech-line 5s linear forwards 0s;
+}
+
 .techs {
+  position: relative;
   padding: 0 18px;
   margin-top: 80px;
 
@@ -14,4 +26,17 @@
     padding: 0 84px;
     margin-top: 160px;
   }
+
+  &__line {
+    display: none;
+
+    @media screen and (min-width: $DESKTOP){
+      display: block;
+      position: absolute;
+      top: 585px;
+      left: 142px;
+      z-index: -1;
+    }
+  }
+
 }

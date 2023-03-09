@@ -54,6 +54,7 @@
     @media screen and (min-width: $DESKTOP){
       width: auto;
       margin-left: 250px;
+      justify-content: flex-start;
       column-gap: 40px;
       row-gap: 0;
       flex: 2;

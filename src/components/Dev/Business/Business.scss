@@ -1,12 +1,36 @@
 @import '../../../styles/_variables.scss';
 
+// анимация линии
+@keyframes business-line {
+  100% {stroke-dasharray:2500,0;}
+}
+
+// класс для svg-линии
+.business-line {
+  stroke-dasharray:0,2500;
+  animation: business-line 3s linear forwards 0s;
+}
+
 .business {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-self: center;
 
   @media screen and (min-width: $DESKTOP){
     width: 1052px;
+  }
+
+  &__line {
+    display: none;
+
+    @media screen and (min-width: $DESKTOP){
+      display: block;
+      position: absolute;
+      top: -44px;
+      left: -193px;
+      z-index: -1;
+    }
   }
 
   &__title {
@@ -40,6 +64,7 @@
     }
 
     @media screen and (min-width: $DESKTOP){
+      padding-top: 43px;
       row-gap: 40px;
     }
   }

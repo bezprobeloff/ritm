@@ -1,8 +1,10 @@
 import './Business.scss';
+import { ReactComponent as BusinessLine } from '../../../images/business-line.svg';
 
 const Business = () => {
   return (
     <div className='business'>
+      <BusinessLine className='business__line' />
       <h3 className='section__subtitle business__title'>
         Основные преимущества для вашего бизнеса
       </h3>

@@ -1,8 +1,35 @@
 @import '../../styles/_variables.scss';
+// анимация линии
+@keyframes form-line {
+  100% {stroke-dasharray:3500,0;}
+}
+
+// класс для svg-линии
+.form-line {
+  stroke-dasharray:0,3500;
+  animation: tech-line 5s linear forwards 0s;
+}
+
 
 .feedback {
+  @media screen and (min-width: $DESKTOP){
+    margin-bottom: 200px;
+  }
+
+  &__line {
+    display: none;
+
+    @media screen and (min-width: $DESKTOP){
+      display: block;
+      position: absolute;
+      top: 18px;
+      left: 118px;
+      z-index: -1;
+    }
+  }
   &__wrapper {
     @media screen and (min-width: $DESKTOP){
+      position: relative;
       padding: 0 88px;
     }
   }
@@ -37,6 +64,7 @@
     padding-top: 32px;
     padding-bottom: 0;
     row-gap: 24px;
+    background-color: $BLACK;
 
     @media screen and (min-width: $PAD){
       padding-top: 40px;
@@ -45,9 +73,10 @@
     }
 
     @media screen and (min-width: $DESKTOP){
-      width: 837px;
+      padding-right: 15px;
+      width: 852px;
       padding-top: 60px;
-      padding-bottom: 57px;
+      padding-bottom: 20px;
       column-gap: 25px;
     }
 

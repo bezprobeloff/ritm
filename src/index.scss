@@ -19,3 +19,63 @@
   text-rendering: optimizeLegibility;
 }
 
+.link {
+  @include font_text(18px, 1.33, $GRAY_NAV, 500);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover, &_active {
+    color: $WHITE;
+    transition: 2s;
+  }
+
+  &_disabled {
+    color: $GRAY_DISABLE;
+    cursor: auto;
+  }
+}
+
+.button {
+  padding: 16px 40px;
+  @include font_text(18px, 1.33, $WHITE, 500);
+  text-decoration: none;
+  background-color: $BLUE;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  &:hover, &_active {
+    background-color: $BLUE_ACTIVE;
+    transition: 2s;
+  }
+
+  &:disabled, &_disabled {
+    background-color: $GRAY_DISABLE;
+    color: $GRAY_DARK;
+    cursor: auto;
+  }
+}
+
+.input {
+  padding: 15px 18px;
+  border: 1px solid $GRAY_TEXT;
+  border-radius: 14px;
+  background-color: transparent;
+  @include font_text(18px, 1.33, $WHITE_INPUT);
+  outline: none;
+
+  &:hover {
+    border-color: $BLUE;
+    transition: 2s;
+  }
+
+  &:focus {
+    border-color: $GRAY_TEXT;
+  }
+
+  &:disabled {
+    border-color: $GRAY_DISABLE;
+    color: $GRAY_DISABLE;
+  }
+}
+

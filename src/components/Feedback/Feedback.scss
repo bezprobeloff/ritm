@@ -13,7 +13,7 @@
 
 .feedback {
   @media screen and (min-width: $DESKTOP){
-    margin-bottom: 200px;
+    margin-bottom: 190px;
   }
 
   &__line {
@@ -81,15 +81,6 @@
     }
 
     &-input {
-      padding: 15px 18px;
-      border: 1px solid $GRAY_TEXT;
-      border-radius: 14px;
-      background-color: transparent;
-      @include font_text(18px, 1.33, $WHITE_INPUT);
-
-      @media screen and (min-width: $DESKTOP){
-
-      }
     }
 
     &-textarea {
@@ -99,12 +90,12 @@
         height: auto;
         grid-row: span 2;
       }
-
     }
 
     &__checkbox {
       position: relative;
       display: flex;
+      cursor: pointer;
       &-input {
         position: absolute;
         opacity: 0;
@@ -143,12 +134,7 @@
     }
 
     &-button-submit {
-      padding: 16px 40px;
       margin: 0;
-      background-color: $BLUE;
-      border: none;
-      border-radius: 14px;
-      @include font_text(18px, 1.33, $WHITE, 500);
       text-align: center;
 
       @media screen and (min-width: $PAD){

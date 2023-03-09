@@ -43,6 +43,7 @@
 
   &__question {
     display: flex;
+    cursor: pointer;
     &::-webkit-details-marker {
       display: none;
     }

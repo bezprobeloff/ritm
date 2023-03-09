@@ -61,7 +61,8 @@
     }
 
     &-link {
-      @include font_text(18px, 1.33, $GRAY_DARK);
+      color: $GRAY_DARK;
+      font-weight: 400;
       text-align: center;
       text-decoration: none;
     }
@@ -86,6 +87,10 @@
     }
 
     &-link {
+      &:hover, &_active {
+        color: $WHITE;
+        transition: 2s;
+      }
       @include font_text(16px, 1.12, $GRAY_DARK);
 
       @media screen and (min-width: $DESKTOP){

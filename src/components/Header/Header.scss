@@ -177,8 +177,6 @@
 
     &-link {
       margin-left: 18px;
-      @include font_text(18px, 1.33, $GRAY_NAV, 700);
-      text-decoration: none;
 
       @media screen and (min-width: $PAD){
         margin-left: 46px;
@@ -186,6 +184,7 @@
 
       @media screen and (min-width: $DESKTOP){
         margin-left: 24px;
+        font-weight: 700;
       }
     }
 
@@ -193,11 +192,6 @@
 
   &__button-link {
     margin: 0;
-    padding: 16px 40px;
-    @include font_text(18px, 1.33, $WHITE, 500);
-    text-decoration: none;
-    background-color: $BLUE;
-    border-radius: 14px;
     order: 2;
 
     @media screen and (min-width: $DESKTOP){

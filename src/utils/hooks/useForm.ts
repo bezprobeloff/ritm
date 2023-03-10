@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import React, { HTMLInputTypeAttribute, useCallback, useState } from "react";
 
 //хук управления формой и валидации формы
 const useFormWithValidation = () => {
@@ -6,13 +6,15 @@ const useFormWithValidation = () => {
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
 
-  const handleChange = (event) => {
-    const target = event.target;
-    const name = target.name;
-    const value = target.value;
+  const handleChange = (event: React.ChangeEvent) => {
+    const target = event.target as HTMLInputElement;
+    const name: string = target.name as HTMLInputTypeAttribute;
+    const value: string = target.value;
+
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: target.validationMessage });
-    setIsValid(target.closest('form').checkValidity());
+    // @ts-ignore
+    setIsValid(target.closest("form").checkValidity());
   };
 
   const resetForm = useCallback(

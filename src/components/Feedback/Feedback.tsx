@@ -3,8 +3,28 @@ import { ReactComponent as FormLine } from "../../images/form-line.svg";
 import Input from "./Input/Input";
 import React from "react";
 import TextArea from "./TextArea/TextArea";
+import useForm from "../../utils/hooks/useForm";
+import { PATTERN_EMAIL } from "../../utils/constants";
+
+const inputNameAttributes = {
+  minLength: 2,
+  maxLength: 40,
+  required: true,
+};
+const inputMobileAttributes = {
+  required: true,
+};
+
+const inputEmailAttributes = {
+  pattern: PATTERN_EMAIL,
+  required: true,
+};
 
 const Feedback = () => {
+  const form = useForm();
+  const handleSubmit = (evt: React.FormEvent): void => {
+    evt.preventDefault();
+  };
   return (
     <section id="feedback" className="section feedback">
       <div className="section__wrapper feedback__wrapper">
@@ -18,19 +38,50 @@ const Feedback = () => {
           обсудить конкретную задачу или просто получить консультацию, напишите
           нам через форму обратной связи
         </p>
-        <form noValidate className="feedback__form">
-          <Input name="name" placeholderText="Имя" typeInput="text" />
-          <Input name="mobile" placeholderText="Телефон" typeInput="tel" />
-          <Input name="email" placeholderText="Email" typeInput="email" />
-          <TextArea />
+        <form noValidate className="feedback__form" onSubmit={handleSubmit}>
+          <Input
+            name="name"
+            placeholderText="Имя"
+            typeInput="text"
+            errors={form.errors}
+            validateAttributes={inputNameAttributes}
+            onChange={form.handleChange}
+          />
+          <Input
+            name="mobile"
+            placeholderText="Телефон"
+            typeInput="tel"
+            errors={form.errors}
+            validateAttributes={inputMobileAttributes}
+            onChange={form.handleChange}
+          />
+          <Input
+            name="email"
+            placeholderText="Email"
+            typeInput="email"
+            errors={form.errors}
+            validateAttributes={inputEmailAttributes}
+            onChange={form.handleChange}
+          />
+          <TextArea onChange={form.handleChange} />
           <label className="feedback__form__checkbox">
-            <input type="checkbox" className="feedback__form__checkbox-input" />
+            <input
+              name="data-policy"
+              type="checkbox"
+              className="feedback__form__checkbox-input"
+              onChange={form.handleChange}
+              required
+            />
             <span className="feedback__form__checkbox-text">
               Нажимая на кнопку, вы даете согласие на обработку своих
               персональных данных.
             </span>
           </label>
-          <button className="button feedback__form-button-submit" type="submit">
+          <button
+            className="button feedback__form-button-submit"
+            type="submit"
+            disabled={!form.isValid}
+          >
             Отправить вопрос
           </button>
         </form>

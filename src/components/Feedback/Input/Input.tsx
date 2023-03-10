@@ -4,9 +4,19 @@ type PropTypes = {
   name: string;
   typeInput: string;
   placeholderText: string;
+  errors: { [index: string]: string };
+  validateAttributes: { [index: string]: any };
+  onChange: React.ChangeEventHandler;
 };
 
-const Input: React.FC<PropTypes> = ({ name, placeholderText, typeInput }) => {
+const Input: React.FC<PropTypes> = ({
+  name,
+  placeholderText,
+  typeInput,
+  errors,
+  onChange,
+  validateAttributes,
+}) => {
   return (
     <>
       <label className="input-container">
@@ -15,11 +25,13 @@ const Input: React.FC<PropTypes> = ({ name, placeholderText, typeInput }) => {
           name={name}
           type={typeInput}
           placeholder={placeholderText}
+          onChange={onChange}
+          {...validateAttributes}
           required
         />
         <span className="input-placeholder">{placeholderText}</span>
         <span className="input-error" aria-live="polite">
-          The email is invalid
+          {errors[name]}
         </span>
       </label>
     </>

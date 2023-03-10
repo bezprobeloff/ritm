@@ -1,0 +1,74 @@
+@import '../../../styles/_variables.scss';
+
+.custom-field1 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 56px;
+  padding: 0 18px;
+  flex-direction: column-reverse;
+  justify-content: center;
+
+  @include font_text(18px, 1.33, $WHITE_INPUT);
+  text-align: left;
+
+  border: 1px solid $GRAY_TEXT;
+  border-radius: 14px;
+  background-color: transparent;
+
+}
+
+.input1 {
+  padding: 0;
+  color: $WHITE_INPUT;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: 1s;
+}
+
+.input1::placeholder {
+  color: transparent;
+}
+
+.input1:placeholder-shown {
+  position: absolute;
+  transition: 1s;
+}
+
+.input1:not(placeholder-shown) + .placeholder1 {
+  position: absolute;
+  color: transparent;
+  transition: 1s;
+}
+
+.input1:placeholder-shown + .placeholder1 {
+  position: static;
+  color: white;
+  transition: 1s;
+}
+
+.input1:placeholder-shown:focus {
+  position: static;
+  transition: 1s;
+}
+
+.input1:focus + .placeholder1 {
+  position: static;
+  font-size: 8px;
+  line-height: 1.25;
+  color: $BLUE;
+
+
+  transition:
+          top 0.3s ease,
+          color 0.3s ease,
+          font-size 0.3s ease;
+}
+
+
+
+.error-message {
+  position: absolute;
+  bottom: -20px;
+}

@@ -1,12 +1,24 @@
-import './Input.scss';
+import React from "react";
 
-const Input = () => {
+type PropTypes = {
+  name: string;
+  typeInput: string;
+  placeholderText: string;
+};
+
+const Input: React.FC<PropTypes> = ({ name, placeholderText, typeInput }) => {
   return (
     <>
-      <label className='custom-field1'>
-        <input className='input1' type='email' placeholder='Enter Email' />
-        <span className='placeholder1'>Enter Email</span>
-        <span className='error-message' aria-live='polite'>
+      <label className="input-container">
+        <input
+          className="input"
+          name={name}
+          type={typeInput}
+          placeholder={placeholderText}
+          required
+        />
+        <span className="input-placeholder">{placeholderText}</span>
+        <span className="input-error" aria-live="polite">
           The email is invalid
         </span>
       </label>

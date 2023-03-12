@@ -1,3 +1,4 @@
+import React from "react";
 import "../../../styles/section.scss";
 import "./Advantage.scss";
 
@@ -5,7 +6,8 @@ import iconBox from "../../../images/icon-box.svg";
 import iconBrowser from "../../../images/icon-browser.svg";
 import iconDevices from "../../../images/icon-devices.svg";
 import iconInternet from "../../../images/icon-internet.svg";
-const Advantage = () => {
+
+const Advantage: React.FC = () => {
   return (
     <div className="advantage">
       <h3 className="section__subtitle advantage__title">

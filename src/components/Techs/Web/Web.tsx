@@ -1,6 +1,8 @@
 import "../../../styles/section.scss";
 import "./Web.scss";
-const Web = () => {
+import React from "react";
+
+const Web: React.FC = () => {
   return (
     <div className="web">
       <h3 className="section__subtitle web__title">

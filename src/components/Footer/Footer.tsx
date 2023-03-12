@@ -1,7 +1,8 @@
 import "./Footer.scss";
 import logo from "../../images/logo.svg";
+import React from "react";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <a href="/" className="footer__logo-link">

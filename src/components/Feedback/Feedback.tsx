@@ -1,10 +1,12 @@
 import "./Feedback.scss";
 import { ReactComponent as FormLine } from "../../images/form-line.svg";
 import Input from "./Input/Input";
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import TextArea from "./TextArea/TextArea";
 import useForm from "../../utils/hooks/useForm";
 import { PATTERN_EMAIL } from "../../utils/constants";
+import { LineContext } from "../../contexts/LineContext";
+import useLine from "../../utils/hooks/useLine";
 
 const inputNameAttributes = {
   minLength: 2,
@@ -20,16 +22,30 @@ const inputEmailAttributes = {
   required: true,
 };
 
-const Feedback = () => {
+const Feedback: React.FC = () => {
   const form = useForm();
+  const scrollPositionContext = useContext(LineContext);
+  const line = useLine();
+  const feedbackElement = useRef(null);
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
   };
+
+  useEffect(() => {
+    line.setElement(feedbackElement.current);
+  }, []);
+
+  useEffect(() => {
+    line.setScrollPosition(scrollPositionContext);
+  }, [scrollPositionContext]);
+
   return (
     <section id="feedback" className="section feedback">
       <div className="section__wrapper feedback__wrapper">
-        <FormLine className="feedback__line" />
-        <h2 className="section__title">Форма обратной связи</h2>
+        {line.isEnabled ? <FormLine className="feedback__line" /> : ""}
+        <h2 className="section__title" ref={feedbackElement}>
+          Форма обратной связи
+        </h2>
         <h3 className="section__subtitle feedback__subtitle">
           Получить консультацию
         </h3>

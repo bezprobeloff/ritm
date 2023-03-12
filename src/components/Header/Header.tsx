@@ -1,17 +1,31 @@
 import logo from "../../images/logo.svg";
 import "./Header.scss";
 import { ReactComponent as HeaderLine } from "../../images/header-line.svg";
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import useLine from "../../utils/hooks/useLine";
+import { LineContext } from "../../contexts/LineContext";
 
-const Header = () => {
+const Header: React.FC = () => {
+  const scrollPositionContext = useContext(LineContext);
+  const headerElement = useRef(null);
+  const line = useLine();
   const [windowSize, setWindowsSize] = useState(window.screen.width);
-  const [menuOpened, setMenuOpened] = useState(false);
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
   const handleWindowSize = () => {
     setWindowsSize(window.screen.width);
   };
 
   useEffect(() => {
+    line.setElement(headerElement.current);
+  }, []);
+
+  useEffect(() => {
+    line.setScrollPosition(scrollPositionContext);
+  }, [scrollPositionContext]);
+
+  useEffect(() => {
     window.addEventListener("resize", handleWindowSize);
+
     return () => {
       window.removeEventListener("resize", handleWindowSize);
     };
@@ -19,29 +33,29 @@ const Header = () => {
 
   useEffect(() => {
     if (windowSize < 1440) {
-      setMenuOpened(false);
+      setIsMenuOpened(false);
     }
   }, [windowSize]);
 
   const classButtonMenu: string = `header__button-menu${
-    menuOpened ? " header__button-menu_opened" : ""
+    isMenuOpened ? " header__button-menu_opened" : ""
   }`;
 
   const classNav: string = `header__nav${
-    menuOpened ? " header__nav_opened" : ""
+    isMenuOpened ? " header__nav_opened" : ""
   }`;
 
   const handleOnButtonMenu = () => {
-    setMenuOpened(!menuOpened);
+    setIsMenuOpened(!isMenuOpened);
   };
 
   const handleOnNavLink = () => {
-    setMenuOpened(!menuOpened);
+    setIsMenuOpened(!isMenuOpened);
   };
 
   return (
     <header id="header" className="header">
-      <HeaderLine className="header__line" />
+      {line.isEnabled ? <HeaderLine className="header__line" /> : ""}
       <a href="/" className="header__logo-link">
         <img src={logo} className="header__logo" alt="Логотип" />
       </a>
@@ -85,7 +99,7 @@ const Header = () => {
       >
         Обсудить проект
       </a>
-      <h1 className="header__title">
+      <h1 className="header__title" ref={headerElement}>
         <span className="header__title-span">
           Разрабатываем и&nbsp;внедряем веб&#8209;приложения
         </span>
@@ -96,4 +110,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

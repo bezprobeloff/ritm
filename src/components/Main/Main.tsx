@@ -5,8 +5,9 @@ import Process from "../Process/Process";
 import Feedback from "../Feedback/Feedback";
 import FAQ from "../FAQ/FAQ";
 import Contacts from "../Contacts/Contacts";
+import React from "react";
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <main className="main">
       <Techs />

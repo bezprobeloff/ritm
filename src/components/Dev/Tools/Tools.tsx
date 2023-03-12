@@ -1,39 +1,40 @@
-import './Tools.scss';
-import iconReact from '../../../images/icon-react.svg';
-import iconNodeJS from '../../../images/icon-nodejs.svg';
-import iconNestJS from '../../../images/icon-nestjs.svg';
-import iconNginx from '../../../images/icon-nginx.svg';
+import "./Tools.scss";
+import iconReact from "../../../images/icon-react.svg";
+import iconNodeJS from "../../../images/icon-nodejs.svg";
+import iconNestJS from "../../../images/icon-nestjs.svg";
+import iconNginx from "../../../images/icon-nginx.svg";
+import React from "react";
 
-const Tools = () => {
+const Tools: React.FC = () => {
   return (
-    <div className='tools'>
-      <div className='tools__list'>
-        <div className='tools__item'>
+    <div className="tools">
+      <div className="tools__list">
+        <div className="tools__item">
           <img
-            className='tools__item-image tools__item-image_type_react'
+            className="tools__item-image tools__item-image_type_react"
             src={iconReact}
-            alt='React'
+            alt="React"
           />
         </div>
-        <div className='tools__item'>
+        <div className="tools__item">
           <img
-            className='tools__item-image tools__item-image_type_nodejs'
+            className="tools__item-image tools__item-image_type_nodejs"
             src={iconNodeJS}
-            alt='NodeJs'
+            alt="NodeJs"
           />
         </div>
-        <div className='tools__item'>
+        <div className="tools__item">
           <img
-            className='tools__item-image tools__item-image_type_nest'
+            className="tools__item-image tools__item-image_type_nest"
             src={iconNestJS}
-            alt='Nest'
+            alt="Nest"
           />
         </div>
-        <div className='tools__item'>
+        <div className="tools__item">
           <img
-            className='tools__item-image tools__item-image_type_nginx'
+            className="tools__item-image tools__item-image_type_nginx"
             src={iconNginx}
-            alt='Nginx'
+            alt="Nginx"
           />
         </div>
       </div>

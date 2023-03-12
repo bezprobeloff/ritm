@@ -1,8 +1,9 @@
 import "../../styles/section.scss";
 import "./Process.scss";
 import Steps from "./Steps/Steps";
+import React from "react";
 
-const Process = () => {
+const Process: React.FC = () => {
   return (
     <section id="process" className="section process">
       <div className="section__wrapper">

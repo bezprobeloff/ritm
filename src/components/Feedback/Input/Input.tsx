@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 type PropTypes = {
   name: string;
   typeInput: string;
   placeholderText: string;
   errors: { [index: string]: string };
-  validateAttributes: { [index: string]: any };
+  validateAttributes: { [index: string]: string | boolean | number };
   onChange: React.ChangeEventHandler;
 };
 
@@ -15,7 +15,7 @@ const Input: React.FC<PropTypes> = ({
   typeInput,
   errors,
   onChange,
-  validateAttributes,
+  validateAttributes
 }) => {
   return (
     <>

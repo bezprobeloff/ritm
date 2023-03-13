@@ -1,7 +1,7 @@
-import "../../styles/section.scss";
-import "./Process.scss";
-import Steps from "./Steps/Steps";
-import React from "react";
+import '../../styles/section.scss';
+import './Process.scss';
+import Steps from './Steps/Steps';
+import React from 'react';
 
 const Process: React.FC = () => {
   return (

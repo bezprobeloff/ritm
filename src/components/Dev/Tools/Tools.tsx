@@ -1,9 +1,9 @@
-import "./Tools.scss";
-import iconReact from "../../../images/icon-react.svg";
-import iconNodeJS from "../../../images/icon-nodejs.svg";
-import iconNestJS from "../../../images/icon-nestjs.svg";
-import iconNginx from "../../../images/icon-nginx.svg";
-import React from "react";
+import './Tools.scss';
+import iconReact from '../../../images/icon-react.svg';
+import iconNodeJS from '../../../images/icon-nodejs.svg';
+import iconNestJS from '../../../images/icon-nestjs.svg';
+import iconNginx from '../../../images/icon-nginx.svg';
+import React from 'react';
 
 const Tools: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
-import "./FAQ.scss";
-import React from "react";
+import './FAQ.scss';
+import React from 'react';
 
 const FAQ: React.FC = () => {
   return (
@@ -12,21 +12,21 @@ const FAQ: React.FC = () => {
             <summary className="faq__question">
               <span className="faq__question-icon" />
               <p className="faq__question-text">
-                Если мне нужен простой сайт, я могу сделаю его с помощью
-                шаблона. Зачем мне сложное веб-приложение?
+                Если мне нужен простой сайт, я могу сделаю его с помощью шаблона. Зачем мне сложное
+                веб-приложение?
               </p>
             </summary>
             <p className="faq__answer">
-              Если мне нужен простой сайт, я сделаю его на конструкторе. Зачем
-              мне все эти сложности с веб-приложением?
+              Если мне нужен простой сайт, я сделаю его на конструкторе. Зачем мне все эти сложности
+              с веб-приложением?
             </p>
           </details>
           <details className="faq__details">
             <summary className="faq__question">
               <span className="faq__question-icon" />
               <p className="faq__question-text">
-                Мне предлагают сделать сайт на Bitrix и Wordpress. Эти решения
-                хуже и не будут работать?
+                Мне предлагают сделать сайт на Bitrix и Wordpress. Эти решения хуже и не будут
+                работать?
               </p>
             </summary>
             <p className="faq__answer">%ДОБАВИТЬ_ТЕКСТ%</p>
@@ -35,8 +35,7 @@ const FAQ: React.FC = () => {
             <summary className="faq__question">
               <span className="faq__question-icon" />
               <p className="faq__question-text">
-                Можно ли разбить процесс на этапы и реализовывать их
-                последовательно?
+                Можно ли разбить процесс на этапы и реализовывать их последовательно?
               </p>
             </summary>
             <p className="faq__answer">%ДОБАВИТЬ_ТЕКСТ%</p>
@@ -45,8 +44,7 @@ const FAQ: React.FC = () => {
             <summary className="faq__question">
               <span className="faq__question-icon" />
               <p className="faq__question-text">
-                У меня уже есть сайт, он прекрасно работает. Мне все придется
-                делать заново?
+                У меня уже есть сайт, он прекрасно работает. Мне все придется делать заново?
               </p>
             </summary>
             <p className="faq__answer">%ДОБАВИТЬ_ТЕКСТ%</p>

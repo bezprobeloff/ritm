@@ -1,29 +1,27 @@
-import logo from "../../images/logo.svg";
-import "./Header.scss";
-import { ReactComponent as HeaderLine } from "../../images/header-line.svg";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import useLine from "../../utils/hooks/useLine";
-import { LineContext } from "../../contexts/LineContext";
+import logo from '../../images/logo.svg';
+import './Header.scss';
+import { ReactComponent as HeaderLine } from '../../images/header-line.svg';
+import React, { useEffect, useRef, useState } from 'react';
+import useIntersection from 'react-use/lib/useIntersection';
 
 const Header: React.FC = () => {
-  const scrollPositionContext = useContext(LineContext);
-  const headerElement = useRef(null);
-  const line = useLine();
+  const headerElementRef = useRef(null);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const intersection = useIntersection(headerElementRef, {
+    root: null,
+    rootMargin: '20px',
+    threshold: 1
+  });
 
   useEffect(() => {
-    line.setElement(headerElement.current);
-  }, []);
+    if (!isLineEnabled && intersection?.intersectionRatio === 1) {
+      setIsLineEnabled(true);
+    }
+  }, [intersection, isLineEnabled]);
 
-  useEffect(() => {
-    line.setScrollPosition(scrollPositionContext);
-  }, [scrollPositionContext]);
-
-  const classButtonMenu: string = `header__button-menu${
-    isMenuOpened ? " header__button-menu_opened" : ""
-  }`;
-
-  const classNav: string = `header__nav${isMenuOpened ? " header__nav_opened" : ""}`;
+  const classButtonMenu = `header__button-menu${isMenuOpened ? ' header__button-menu_opened' : ''}`;
+  const classNav = `header__nav${isMenuOpened ? ' header__nav_opened' : ''}`;
 
   const handleOnButtonMenu = () => {
     setIsMenuOpened(!isMenuOpened);
@@ -35,8 +33,8 @@ const Header: React.FC = () => {
 
   return (
     <header id="header" className="header">
-      {line.isEnabled ? <HeaderLine className="header__line" /> : ""}
-      <a href="/" className="header__logo-link">
+      {isLineEnabled ? <HeaderLine className="header__line" /> : ''}
+      <a href="/" className="header__logo-link" ref={headerElementRef}>
         <img src={logo} className="header__logo" alt="Логотип" />
       </a>
       <button className={classButtonMenu} onClick={handleOnButtonMenu}>
@@ -59,7 +57,7 @@ const Header: React.FC = () => {
       <a href="#feedback" className="button header__button-link" onClick={handleOnNavLink}>
         Обсудить проект
       </a>
-      <h1 className="header__title" ref={headerElement}>
+      <h1 className="header__title">
         <span className="header__title-span">
           Разрабатываем и&nbsp;внедряем веб&#8209;приложения
         </span>

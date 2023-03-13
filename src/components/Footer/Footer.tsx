@@ -1,6 +1,6 @@
-import "./Footer.scss";
-import logo from "../../images/logo.svg";
-import React from "react";
+import './Footer.scss';
+import logo from '../../images/logo.svg';
+import React from 'react';
 
 const Footer: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         </a>
       </nav>
       <p className="footer__copyright">
-        {new Date().getFullYear()} |{" "}
+        {new Date().getFullYear()} |{' '}
         <a className="footer__copyright-link" href="/">
           Политика конфиденциальности персональных данных
         </a>

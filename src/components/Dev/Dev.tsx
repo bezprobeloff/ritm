@@ -1,9 +1,9 @@
-import "../../styles/section.scss";
-import "./Dev.scss";
-import Stages from "./Stages/Stages";
-import Business from "./Business/Business";
-import Tools from "./Tools/Tools";
-import React from "react";
+import '../../styles/section.scss';
+import './Dev.scss';
+import Stages from './Stages/Stages';
+import Business from './Business/Business';
+import Tools from './Tools/Tools';
+import React from 'react';
 
 const Dev: React.FC = () => {
   return (

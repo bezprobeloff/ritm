@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { useSwipeable } from "react-swipeable";
+import React, { useEffect, useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
-import "./Carousel.scss";
+import './Carousel.scss';
 
-export const CarouselItem = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+export const CarouselItem: React.FC<Props> = ({ children }) => {
   return (
-    <div className="carousel__item" style={{ width: "100%" }}>
+    <div className="carousel__item" style={{ width: '100%' }}>
       {children}
     </div>
   );
 };
 
-const Carousel = ({ children }) => {
+const Carousel: React.FC<Props> = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const updateIndex = (newIndex) => {
+  const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
     } else if (newIndex >= React.Children.count(children)) {
@@ -41,7 +45,7 @@ const Carousel = ({ children }) => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIndex(activeIndex + 1),
-    onSwipedRight: () => updateIndex(activeIndex - 1),
+    onSwipedRight: () => updateIndex(activeIndex - 1)
   });
 
   return (
@@ -52,16 +56,14 @@ const Carousel = ({ children }) => {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="carousel__inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: "100%" });
-        })}
+        {children}
       </div>
       <div className="carousel__indicators">
         {React.Children.map(children, (child, index) => {
           return (
             <button
               className={`carousel__indicators-button${
-                index === activeIndex ? " carousel__indicators-button_active" : ""
+                index === activeIndex ? ' carousel__indicators-button_active' : ''
               }`}
               onClick={() => {
                 updateIndex(index);

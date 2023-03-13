@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { DESKTOP_WIDTH, PAD_WIDTH } from "../constants";
+import { useEffect, useState } from 'react';
+import { DESKTOP_WIDTH, PAD_WIDTH } from '../constants';
 
 //хук состояния экрана
 
@@ -12,10 +12,10 @@ const useResponsive = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleWindowSize);
+    window.addEventListener('resize', handleWindowSize);
 
     return () => {
-      window.removeEventListener("resize", handleWindowSize);
+      window.removeEventListener('resize', handleWindowSize);
     };
   }, []);
 

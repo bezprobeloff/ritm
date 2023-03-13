@@ -1,58 +1,56 @@
-import "./Feedback.scss";
-import { ReactComponent as FormLine } from "../../images/form-line.svg";
-import Input from "./Input/Input";
-import React, { useContext, useEffect, useRef } from "react";
-import TextArea from "./TextArea/TextArea";
-import useForm from "../../utils/hooks/useForm";
-import { PATTERN_EMAIL } from "../../utils/constants";
-import { LineContext } from "../../contexts/LineContext";
-import useLine from "../../utils/hooks/useLine";
+import './Feedback.scss';
+import { ReactComponent as FormLine } from '../../images/form-line.svg';
+import Input from './Input/Input';
+import React, { useEffect, useRef, useState } from 'react';
+import TextArea from './TextArea/TextArea';
+import useForm from '../../utils/hooks/useForm';
+import { PATTERN_EMAIL } from '../../utils/constants';
+import useIntersection from 'react-use/lib/useIntersection';
 
 const inputNameAttributes = {
   minLength: 2,
   maxLength: 40,
-  required: true,
+  required: true
 };
 const inputMobileAttributes = {
-  required: true,
+  required: true
 };
 
 const inputEmailAttributes = {
   pattern: PATTERN_EMAIL,
-  required: true,
+  required: true
 };
 
 const Feedback: React.FC = () => {
   const form = useForm();
-  const scrollPositionContext = useContext(LineContext);
-  const line = useLine();
-  const feedbackElement = useRef(null);
+  const feedbackElementRef = useRef(null);
+  const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const intersection = useIntersection(feedbackElementRef, {
+    root: null,
+    rootMargin: '20px',
+    threshold: 1
+  });
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
   };
 
   useEffect(() => {
-    line.setElement(feedbackElement.current);
-  }, []);
-
-  useEffect(() => {
-    line.setScrollPosition(scrollPositionContext);
-  }, [scrollPositionContext]);
+    if (!isLineEnabled && intersection?.intersectionRatio === 1) {
+      setIsLineEnabled(true);
+    }
+  }, [intersection, isLineEnabled]);
 
   return (
     <section id="feedback" className="section feedback">
       <div className="section__wrapper feedback__wrapper">
-        {line.isEnabled ? <FormLine className="feedback__line" /> : ""}
-        <h2 className="section__title" ref={feedbackElement}>
+        {isLineEnabled ? <FormLine className="feedback__line" /> : ''}
+        <h2 className="section__title" ref={feedbackElementRef}>
           Форма обратной связи
         </h2>
-        <h3 className="section__subtitle feedback__subtitle">
-          Получить консультацию
-        </h3>
+        <h3 className="section__subtitle feedback__subtitle">Получить консультацию</h3>
         <p className="feedback__description">
-          Если вы хотите больше узнать о нас, наших технологиях и опыте работы,
-          обсудить конкретную задачу или просто получить консультацию, напишите
-          нам через форму обратной связи
+          Если вы хотите больше узнать о нас, наших технологиях и опыте работы, обсудить конкретную
+          задачу или просто получить консультацию, напишите нам через форму обратной связи
         </p>
         <form noValidate className="feedback__form" onSubmit={handleSubmit}>
           <Input
@@ -89,8 +87,7 @@ const Feedback: React.FC = () => {
               required
             />
             <span className="feedback__form__checkbox-text">
-              Нажимая на кнопку, вы даете согласие на обработку своих
-              персональных данных.
+              Нажимая на кнопку, вы даете согласие на обработку своих персональных данных.
             </span>
           </label>
           <button

@@ -1,10 +1,10 @@
-import "../../../styles/section.scss";
-import "./Stages.scss";
-import imageStep1 from "../../../images/image-step1.svg";
-import imageStep2 from "../../../images/image-step2.svg";
-import imageStep3 from "../../../images/image-step3.svg";
-import imageStep4 from "../../../images/image-step4.svg";
-import React from "react";
+import '../../../styles/section.scss';
+import './Stages.scss';
+import imageStep1 from '../../../images/image-step1.svg';
+import imageStep2 from '../../../images/image-step2.svg';
+import imageStep3 from '../../../images/image-step3.svg';
+import imageStep4 from '../../../images/image-step4.svg';
+import React from 'react';
 
 const Stages: React.FC = () => {
   return (
@@ -17,13 +17,12 @@ const Stages: React.FC = () => {
           <div className="stages__item-text-wrap">
             <p className="stages__item-title">Первый этап</p>
             <p className="stages__item-description">
-              Ваша компания только начинает свой путь развития. Вам необходим
-              простой сайт-визитка или одностраничный лэндинг для продвижения
-              продукта.
+              Ваша компания только начинает свой путь развития. Вам необходим простой сайт-визитка
+              или одностраничный лэндинг для продвижения продукта.
             </p>
             <p className="stages__item-description">
-              С помощью технологии веб-приложения мы разрабатываем быстрый сайт
-              с современным адаптивным дизайном.
+              С помощью технологии веб-приложения мы разрабатываем быстрый сайт с современным
+              адаптивным дизайном.
             </p>
           </div>
           <div className="stages__item-image-wrapper stages__item-image-wrapper_type_first">
@@ -38,13 +37,11 @@ const Stages: React.FC = () => {
           <div className="stages__item-text-wrap">
             <p className="stages__item-title">Второй этап</p>
             <p className="stages__item-description">
-              Ваши бизнес-процессы становятся все сложнее и требуют новых
-              функциональных возможностей. Мы добавляем на сайт каталог товаров
-              с системой уведомления менеджеров.
+              Ваши бизнес-процессы становятся все сложнее и требуют новых функциональных
+              возможностей. Мы добавляем на сайт каталог товаров с системой уведомления менеджеров.
             </p>
             <p className="stages__item-description">
-              Оба блока работают в единой экосистеме и не конфликтуют между
-              собой.
+              Оба блока работают в единой экосистеме и не конфликтуют между собой.
             </p>
           </div>
           <div className="stages__item-image-wrapper stages__item-image-wrapper_type_second">
@@ -59,13 +56,12 @@ const Stages: React.FC = () => {
           <div className="stages__item-text-wrap">
             <p className="stages__item-title">Третий этап</p>
             <p className="stages__item-description">
-              Вы решаете сделать шаг в сторону полноценного e-commerce и
-              запустить интернет-магазин. Мы разрабатываем систему приема
-              платежей, авторизацию и гео-треккинг.
+              Вы решаете сделать шаг в сторону полноценного e-commerce и запустить интернет-магазин.
+              Мы разрабатываем систему приема платежей, авторизацию и гео-треккинг.
             </p>
             <p className="stages__item-description">
-              Все разделы вашего корпоративного портала работают вместе над
-              реализацией единой задачи.
+              Все разделы вашего корпоративного портала работают вместе над реализацией единой
+              задачи.
             </p>
           </div>
           <div className="stages__item-image-wrapper stages__item-image-wrapper_type_third">
@@ -80,13 +76,12 @@ const Stages: React.FC = () => {
           <div className="stages__item-text-wrap">
             <p className="stages__item-title">Четвертый этап</p>
             <p className="stages__item-description">
-              Ваша компания внедряет системы учета, CRM-модули, контроль
-              эффективности менеджеров и продвинутая бизнес-аналитика. Вам
-              требуется создание своей бизнес-экосистемы.
+              Ваша компания внедряет системы учета, CRM-модули, контроль эффективности менеджеров и
+              продвинутая бизнес-аналитика. Вам требуется создание своей бизнес-экосистемы.
             </p>
             <p className="stages__item-description">
-              Мы продолжаем процесс разработки и создаём уникальный продукт,
-              связывающий все ресурсы компании.
+              Мы продолжаем процесс разработки и создаём уникальный продукт, связывающий все ресурсы
+              компании.
             </p>
           </div>
           <div className="stages__item-image-wrapper stages__item-image-wrapper_type_fourth">

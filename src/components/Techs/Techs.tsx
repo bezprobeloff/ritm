@@ -1,36 +1,34 @@
-import "../../styles/section.scss";
-import "./Techs.scss";
-import Web from "./Web/Web";
-import Advantage from "./Advantage/Advantage";
-import { ReactComponent as TechLine } from "../../images/tech-line.svg";
-import React, { useContext, useEffect, useRef } from "react";
-import { LineContext } from "../../contexts/LineContext";
-import useLine from "../../utils/hooks/useLine";
+import '../../styles/section.scss';
+import './Techs.scss';
+import Web from './Web/Web';
+import Advantage from './Advantage/Advantage';
+import { ReactComponent as TechLine } from '../../images/tech-line.svg';
+import React, { useEffect, useRef, useState } from 'react';
+import useIntersection from 'react-use/lib/useIntersection';
 
-type Props = {
-  isMobile: boolean;
-};
-const Techs: React.FC<Props> = ({ isMobile }) => {
-  const scrollPositionContext = useContext(LineContext);
-  const line = useLine();
-  const techsElement = useRef(null);
-
-  useEffect(() => {
-    line.setElement(techsElement.current);
-  }, []);
+const Techs: React.FC = () => {
+  const techsElementRef = useRef(null);
+  const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const intersection = useIntersection(techsElementRef, {
+    root: null,
+    rootMargin: '20px',
+    threshold: 1
+  });
 
   useEffect(() => {
-    line.setScrollPosition(scrollPositionContext);
-  }, [scrollPositionContext]);
+    if (!isLineEnabled && intersection?.intersectionRatio === 1) {
+      setIsLineEnabled(true);
+    }
+  }, [intersection, isLineEnabled]);
 
   return (
     <section id="techs" className="section techs">
-      {line.isEnabled ? <TechLine className="techs__line" /> : ""}
-      <h2 className="section__title" ref={techsElement}>
+      {isLineEnabled ? <TechLine className="techs__line" /> : ''}
+      <h2 className="section__title" ref={techsElementRef}>
         Технологии
       </h2>
       <Web />
-      <Advantage isMobile={isMobile} />
+      <Advantage />
     </section>
   );
 };

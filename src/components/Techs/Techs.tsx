@@ -7,7 +7,10 @@ import React, { useContext, useEffect, useRef } from "react";
 import { LineContext } from "../../contexts/LineContext";
 import useLine from "../../utils/hooks/useLine";
 
-const Techs: React.FC = () => {
+type Props = {
+  isMobile: boolean;
+};
+const Techs: React.FC<Props> = ({ isMobile }) => {
   const scrollPositionContext = useContext(LineContext);
   const line = useLine();
   const techsElement = useRef(null);
@@ -27,7 +30,7 @@ const Techs: React.FC = () => {
         Технологии
       </h2>
       <Web />
-      <Advantage />
+      <Advantage isMobile={isMobile} />
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel, { CarouselItem } from "../../Carousel/Carousel";
 import "../../../styles/section.scss";
 import "./Advantage.scss";
 
@@ -7,58 +8,67 @@ import iconBrowser from "../../../images/icon-browser.svg";
 import iconDevices from "../../../images/icon-devices.svg";
 import iconInternet from "../../../images/icon-internet.svg";
 
-const Advantage: React.FC = () => {
+const dataItems = [
+  {
+    imgSrc: iconBox,
+    imgAlt: "Коробки",
+    title: "Модульность",
+    description:
+      "веб-приложение состоит из независимых частей, разрабатываемых в зависимости от текущих задач",
+  },
+  {
+    imgSrc: iconBrowser,
+    imgAlt: "Браузер",
+    title: "Масштабируемость",
+    description:
+      "технология веб-приложений позволяет вашей инфраструктуре расти вместе с компанией",
+  },
+  {
+    imgSrc: iconDevices,
+    imgAlt: "Устройства",
+    title: "Универсальность",
+    description:
+      "веб-приложение работает на любом современном устройстве и доступно из любой точки",
+  },
+  {
+    imgSrc: iconInternet,
+    imgAlt: "Интернет",
+    title: "Кроссплатформенность",
+    description:
+      "веб-приложение позволяет интегрировать любое устройство с выходом в сеть в экосистему компании",
+  },
+];
+
+type Props = {
+  isMobile: boolean;
+};
+const Advantage: React.FC<Props> = ({ isMobile }) => {
+  const advantageItems = dataItems.map((item, index) => (
+    <li key={index} className="section__item advantage__item">
+      <img className="advantage__item-icon" src={item.imgSrc} alt={item.imgAlt} />
+      <p className="advantage__item-title">{item.title}</p>
+      <p className="advantage__item-description">{item.description}</p>
+    </li>
+  ));
+
+  const advantageList = <ul className="section__list advantage__list">{advantageItems}</ul>;
+
+  const carouselItems = dataItems.map((item, index) => (
+    <CarouselItem>
+      <div key={index} className="section__item advantage__item">
+        <img className="advantage__item-icon" src={item.imgSrc} alt={item.imgAlt} />
+        <p className="advantage__item-title">{item.title}</p>
+        <p className="advantage__item-description">{item.description}</p>
+      </div>
+    </CarouselItem>
+  ));
+
+  const carouselList = <Carousel>{carouselItems}</Carousel>;
+
   return (
     <div className="advantage">
-      <h3 className="section__subtitle advantage__title">
-        Основные преимущества наших решений
-      </h3>
-      <ul className="section__list advantage__list">
-        <li className="section__item advantage__item">
-          <img className="advantage__item-icon" src={iconBox} alt="Коробки" />
-          <p className="advantage__item-title">Модульность</p>
-          <p className="advantage__item-description">
-            веб-приложение состоит из независимых частей, разрабатываемых в
-            зависимости от текущих задач
-          </p>
-        </li>
-        <li className="section__item advantage__item">
-          <img
-            className="advantage__item-icon"
-            src={iconBrowser}
-            alt="Браузер"
-          />
-          <p className="advantage__item-title">Масштабируемость</p>
-          <p className="advantage__item-description">
-            технология веб-приложений позволяет вашей инфраструктуре расти
-            вместе с компанией
-          </p>
-        </li>
-        <li className="section__item advantage__item">
-          <img
-            className="advantage__item-icon"
-            src={iconDevices}
-            alt="Устройства"
-          />
-          <p className="advantage__item-title">Универсальность</p>
-          <p className="advantage__item-description">
-            веб-приложение работает на любом современном устройстве и доступно
-            из любой точки
-          </p>
-        </li>
-        <li className="section__item advantage__item">
-          <img
-            className="advantage__item-icon"
-            src={iconInternet}
-            alt="Интернет"
-          />
-          <p className="advantage__item-title">Кроссплатформенность</p>
-          <p className="advantage__item-description">
-            веб-приложение позволяет интегрировать любое устройство с выходом в
-            сеть в экосистему компании
-          </p>
-        </li>
-      </ul>
+      <h3 className="section__subtitle advantage__title">Основные преимущества наших решений</h3>
+      {isMobile ? carouselList : advantageList}
     </div>
   );
 };

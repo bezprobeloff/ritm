@@ -29,7 +29,16 @@
   }
 
   &__item {
-    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    white-space: normal;
+
+    @media screen and (min-width: $MOBILE)
+    and (max-width: $PAD_WITHOUT){
+      padding: 12px;
+    }
 
     @media screen and (min-width: $PAD) {
       padding: 24px;

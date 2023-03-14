@@ -3,6 +3,7 @@ import './Header.scss';
 import { ReactComponent as HeaderLine } from '../../images/header-line.svg';
 import React, { useEffect, useRef, useState } from 'react';
 import useIntersection from 'react-use/lib/useIntersection';
+import Navigation from '../Navigation/Navigation';
 
 const Header: React.FC = () => {
   const headerElementRef = useRef(null);
@@ -22,6 +23,7 @@ const Header: React.FC = () => {
 
   const classButtonMenu = `header__button-menu${isMenuOpened ? ' header__button-menu_opened' : ''}`;
   const classNav = `header__nav${isMenuOpened ? ' header__nav_opened' : ''}`;
+  const classLink = `link header__nav-link`;
 
   const handleOnButtonMenu = () => {
     setIsMenuOpened(!isMenuOpened);
@@ -40,20 +42,11 @@ const Header: React.FC = () => {
       <button className={classButtonMenu} onClick={handleOnButtonMenu}>
         <span className="header__button-menu-icon" />
       </button>
-      <nav className={classNav}>
-        <a href="#header" className="link header__nav-link" onClick={handleOnNavLink}>
-          О компании
-        </a>
-        <a href="#techs" className="link header__nav-link" onClick={handleOnNavLink}>
-          Технологии
-        </a>
-        <a href="#process" className="link header__nav-link" onClick={handleOnNavLink}>
-          Процесс работы
-        </a>
-        <a href="#contacts" className="link header__nav-link" onClick={handleOnNavLink}>
-          Контакты
-        </a>
-      </nav>
+      <Navigation
+        classNameNav={classNav}
+        classNameLink={classLink}
+        onClick={handleOnNavLink}
+      ></Navigation>
       <a href="#feedback" className="button header__button-link">
         Обсудить проект
       </a>

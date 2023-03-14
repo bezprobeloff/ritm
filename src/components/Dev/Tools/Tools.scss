@@ -17,16 +17,18 @@
 
   &__list {
     width: 100%;
+    padding: 0 18px;
     min-height: 126px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 25px;
+    justify-content: space-between;
+
 
     @media screen and (min-width: $PAD){
       min-height: 200px;
       padding: 56px 0;
       column-gap: 50px;
+      justify-content: center;
     }
 
     @media screen and (min-width: $DESKTOP){

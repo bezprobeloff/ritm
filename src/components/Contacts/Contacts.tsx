@@ -27,7 +27,7 @@ const Contacts: React.FC = () => {
         </h2>
         <h3 className="section__subtitle contacts__subtitle">Как с нами связаться</h3>
         <div className="contacts__list">
-          <p className="contacts__item">Контактное лицо: Вадим Бакуров, CEO</p>
+          <p className="contacts__item">Контактное лицо: Вадим&nbsp;Бакуров, CEO</p>
           <p className="contacts__item">
             <span className="contacts__item-icon contacts__item-icon_type_mobile"></span>
             +7 (962) 350-00-14

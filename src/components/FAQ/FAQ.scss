@@ -34,11 +34,9 @@
   }
 
   &__details[open] {
-    @media screen and (min-width: $MOBILE)
-      and (max-width: $PAD_WITHOUT){
+    @media screen and (max-width: $PAD_WITHOUT){
       padding-bottom: 20px;
     }
-
   }
 
   &__question {

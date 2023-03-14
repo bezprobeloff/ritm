@@ -36,10 +36,7 @@
   &__title {
     align-self: center;
     text-align: center;
-
-    @media screen and (min-width: $MOBILE) {
-      margin-bottom: 20px;
-    }
+    margin-bottom: 20px;
 
     @media screen and (min-width: $PAD) {
       margin-bottom: 40px;

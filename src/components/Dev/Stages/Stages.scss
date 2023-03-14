@@ -108,10 +108,7 @@
 
 
     &-image-wrapper {
-      @media screen and (min-width: $MOBILE)
-        and (max-width: $PAD_WITHOUT){
-        display: none;
-      }
+      display: none;
 
       @media screen and (min-width: $PAD) {
         width: 328px;

@@ -143,8 +143,7 @@
   &__nav {
     display: none;
 
-    @media screen and (min-width: $MOBILE)
-      and (max-width: $DESKTOP_WITHOUT){
+    @media screen and (max-width: $DESKTOP_WITHOUT){
       &_opened {
         position: absolute;
         width: 100%;

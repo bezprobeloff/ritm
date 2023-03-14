@@ -25,7 +25,7 @@ const Stages: React.FC = () => {
               адаптивным дизайном.
             </p>
           </div>
-          <div className="stages__item-image-wrapper stages__item-image-wrapper_type_first">
+          <div className="stages__item-image-wrapper">
             <img
               className="stages__item-image stages__item-image_type_first"
               src={imageStep1}
@@ -44,7 +44,7 @@ const Stages: React.FC = () => {
               Оба блока работают в единой экосистеме и не конфликтуют между собой.
             </p>
           </div>
-          <div className="stages__item-image-wrapper stages__item-image-wrapper_type_second">
+          <div className="stages__item-image-wrapper">
             <img
               className="stages__item-image stages__item-image_type_second"
               src={imageStep2}
@@ -64,7 +64,7 @@ const Stages: React.FC = () => {
               задачи.
             </p>
           </div>
-          <div className="stages__item-image-wrapper stages__item-image-wrapper_type_third">
+          <div className="stages__item-image-wrapper">
             <img
               className="stages__item-image stages__item-image_type_third"
               src={imageStep3}
@@ -84,7 +84,7 @@ const Stages: React.FC = () => {
               компании.
             </p>
           </div>
-          <div className="stages__item-image-wrapper stages__item-image-wrapper_type_fourth">
+          <div className="stages__item-image-wrapper">
             <img
               className="stages__item-image stages__item-image_type_fourth"
               src={imageStep4}

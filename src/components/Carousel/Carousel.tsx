@@ -16,6 +16,7 @@ export const CarouselItem: React.FC<Props> = ({ children }) => {
 };
 
 const Carousel: React.FC<Props> = ({ children }) => {
+  const CAROUSEL_DELAY = 3000;
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -34,7 +35,7 @@ const Carousel: React.FC<Props> = ({ children }) => {
       if (!paused) {
         updateIndex(activeIndex + 1);
       }
-    }, 3000);
+    }, CAROUSEL_DELAY);
 
     return () => {
       if (interval) {

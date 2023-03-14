@@ -6,10 +6,13 @@ import useIntersection from 'react-use/lib/useIntersection';
 const Business: React.FC = () => {
   const businessElementRef = useRef(null);
   const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const businessLineElement = isLineEnabled && <BusinessLine className="business__line" />;
+  const ROOT_MARGIN = '20px';
+  const THRESHOLD = 1;
   const intersection = useIntersection(businessElementRef, {
     root: null,
-    rootMargin: '20px',
-    threshold: 1
+    rootMargin: ROOT_MARGIN,
+    threshold: THRESHOLD
   });
 
   useEffect(() => {
@@ -20,7 +23,7 @@ const Business: React.FC = () => {
 
   return (
     <div className="business">
-      {isLineEnabled ? <BusinessLine className="business__line" /> : ''}
+      {businessLineElement}
       <h3 ref={businessElementRef} className="section__subtitle business__title">
         Основные преимущества для вашего бизнеса
       </h3>

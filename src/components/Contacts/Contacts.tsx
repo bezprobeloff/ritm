@@ -6,10 +6,13 @@ import useIntersection from 'react-use/lib/useIntersection';
 const Contacts: React.FC = () => {
   const contactElementRef = useRef(null);
   const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const contactLineElement = isLineEnabled && <ContactLine className="contacts__line" />;
+  const ROOT_MARGIN = '20px';
+  const THRESHOLD = 1;
   const intersection = useIntersection(contactElementRef, {
     root: null,
-    rootMargin: '20px',
-    threshold: 1
+    rootMargin: ROOT_MARGIN,
+    threshold: THRESHOLD
   });
 
   useEffect(() => {
@@ -21,7 +24,7 @@ const Contacts: React.FC = () => {
   return (
     <section id="contacts" className="section contacts">
       <div className="section__wrapper contacts__wrapper">
-        {isLineEnabled ? <ContactLine className="contacts__line" /> : ''}
+        {contactLineElement}
         <h2 className="section__title" ref={contactElementRef}>
           Контакты
         </h2>

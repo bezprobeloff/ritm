@@ -9,10 +9,13 @@ import useIntersection from 'react-use/lib/useIntersection';
 const Techs: React.FC = () => {
   const techsElementRef = useRef(null);
   const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const techsLineElement = isLineEnabled && <TechLine className="techs__line" />;
+  const ROOT_MARGIN = '20px';
+  const THRESHOLD = 1;
   const intersection = useIntersection(techsElementRef, {
     root: null,
-    rootMargin: '20px',
-    threshold: 1
+    rootMargin: ROOT_MARGIN,
+    threshold: THRESHOLD
   });
 
   useEffect(() => {
@@ -23,7 +26,7 @@ const Techs: React.FC = () => {
 
   return (
     <section id="techs" className="section techs">
-      {isLineEnabled ? <TechLine className="techs__line" /> : ''}
+      {techsLineElement}
       <h2 className="section__title" ref={techsElementRef}>
         Технологии
       </h2>

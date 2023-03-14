@@ -26,11 +26,15 @@ const Feedback: React.FC = () => {
   const form = useForm();
   const feedbackElementRef = useRef(null);
   const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const feedbackLineElement = isLineEnabled && <FormLine className="feedback__line" />;
+  const ROOT_MARGIN = '20px';
+  const THRESHOLD = 1;
   const intersection = useIntersection(feedbackElementRef, {
     root: null,
-    rootMargin: '20px',
-    threshold: 1
+    rootMargin: ROOT_MARGIN,
+    threshold: THRESHOLD
   });
+
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
   };
@@ -44,7 +48,7 @@ const Feedback: React.FC = () => {
   return (
     <section id="feedback" className="section feedback">
       <div className="section__wrapper feedback__wrapper">
-        {isLineEnabled ? <FormLine className="feedback__line" /> : ''}
+        {feedbackLineElement}
         <h2 className="section__title" ref={feedbackElementRef}>
           Форма обратной связи
         </h2>

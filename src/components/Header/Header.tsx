@@ -9,10 +9,13 @@ const Header: React.FC = () => {
   const headerElementRef = useRef(null);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [isLineEnabled, setIsLineEnabled] = useState(false);
+  const headerLineElement = isLineEnabled && <HeaderLine className="header__line" />;
+  const ROOT_MARGIN = '20px';
+  const THRESHOLD = 1;
   const intersection = useIntersection(headerElementRef, {
     root: null,
-    rootMargin: '20px',
-    threshold: 1
+    rootMargin: ROOT_MARGIN,
+    threshold: THRESHOLD
   });
 
   useEffect(() => {
@@ -35,7 +38,7 @@ const Header: React.FC = () => {
 
   return (
     <header id="header" className="header">
-      {isLineEnabled ? <HeaderLine className="header__line" /> : ''}
+      {headerLineElement}
       <a href="/" className="header__logo-link" ref={headerElementRef}>
         <img src={logo} className="header__logo" alt="Логотип" />
       </a>

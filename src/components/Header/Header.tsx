@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           Контакты
         </a>
       </nav>
-      <a href="#feedback" className="button header__button-link" onClick={handleOnNavLink}>
+      <a href="#feedback" className="button header__button-link">
         Обсудить проект
       </a>
       <h1 className="header__title">

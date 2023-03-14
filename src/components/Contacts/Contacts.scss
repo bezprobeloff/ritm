@@ -67,6 +67,7 @@
     display: flex;
     @include font_text(18px, 1.33, $WHITE);
     text-align: left;
+    text-decoration: none;
 
     @media screen and (min-width: $PAD){
       font-size: 24px;

@@ -31,14 +31,14 @@ const Contacts: React.FC = () => {
         <h3 className="section__subtitle contacts__subtitle">Как с нами связаться</h3>
         <div className="contacts__list">
           <p className="contacts__item">Контактное лицо: Вадим&nbsp;Бакуров, CEO</p>
-          <p className="contacts__item">
+          <a href="tel: +79623500014" title="Позвонить" className="contacts__item">
             <span className="contacts__item-icon contacts__item-icon_type_mobile"></span>
             +7 (962) 350-00-14
-          </p>
-          <p className="contacts__item">
+          </a>
+          <a href="mailto: vb@ritm.studio" title="Отправить почту" className="contacts__item">
             <span className="contacts__item-icon contacts__item-icon_type_email"></span>
             vb@ritm.studio
-          </p>
+          </a>
         </div>
       </div>
     </section>

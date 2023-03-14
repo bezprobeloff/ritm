@@ -1,11 +1,12 @@
-import './Feedback.scss';
-import { ReactComponent as FormLine } from '../../images/form-line.svg';
-import Input from './Input/Input';
 import React, { useEffect, useRef, useState } from 'react';
-import TextArea from './TextArea/TextArea';
+import useIntersection from 'react-use/lib/useIntersection';
 import useForm from '../../utils/hooks/useForm';
 import { PATTERN_EMAIL } from '../../utils/constants';
-import useIntersection from 'react-use/lib/useIntersection';
+import Input from '../Inputs/Input/Input';
+import TextArea from '../Inputs/TextArea/TextArea';
+
+import './Feedback.scss';
+import { ReactComponent as FormLine } from '../../images/form-line.svg';
 
 const inputNameAttributes = {
   minLength: 2,
@@ -77,7 +78,12 @@ const Feedback: React.FC = () => {
             validateAttributes={inputEmailAttributes}
             onChange={form.handleChange}
           />
-          <TextArea onChange={form.handleChange} />
+          <TextArea
+            name="textarea"
+            placeholderText="Комментарий"
+            errors={form.errors}
+            onChange={form.handleChange}
+          />
           <label className="feedback__form__checkbox">
             <input
               name="data-policy"

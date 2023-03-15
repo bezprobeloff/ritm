@@ -1,26 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useIntersection from 'react-use/lib/useIntersection';
 import useForm from '../../utils/hooks/useForm';
-import { PATTERN_EMAIL } from '../../utils/constants';
 import Input from '../Inputs/Input/Input';
 import TextArea from '../Inputs/TextArea/TextArea';
 
 import './Feedback.scss';
 import { ReactComponent as FormLine } from '../../images/form-line.svg';
-
-const inputNameAttributes = {
-  minLength: 2,
-  maxLength: 40,
-  required: true
-};
-const inputMobileAttributes = {
-  required: true
-};
-
-const inputEmailAttributes = {
-  pattern: PATTERN_EMAIL,
-  required: true
-};
+import {
+  INPUT_EMAIL_ATTRIBUTES,
+  INPUT_MOBILE_ATTRIBUTES,
+  INPUT_NAME_ATTRIBUTES
+} from './constants';
 
 const Feedback: React.FC = () => {
   const form = useForm();
@@ -63,7 +53,7 @@ const Feedback: React.FC = () => {
             placeholderText="Имя"
             typeInput="text"
             errors={form.errors}
-            validateAttributes={inputNameAttributes}
+            validateAttributes={INPUT_NAME_ATTRIBUTES}
             onChange={form.handleChange}
           />
           <Input
@@ -71,7 +61,7 @@ const Feedback: React.FC = () => {
             placeholderText="Телефон"
             typeInput="tel"
             errors={form.errors}
-            validateAttributes={inputMobileAttributes}
+            validateAttributes={INPUT_MOBILE_ATTRIBUTES}
             onChange={form.handleChange}
           />
           <Input
@@ -79,7 +69,7 @@ const Feedback: React.FC = () => {
             placeholderText="Email"
             typeInput="email"
             errors={form.errors}
-            validateAttributes={inputEmailAttributes}
+            validateAttributes={INPUT_EMAIL_ATTRIBUTES}
             onChange={form.handleChange}
           />
           <TextArea

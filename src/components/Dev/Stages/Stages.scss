@@ -71,7 +71,7 @@
     }
 
     &-title {
-      margin: 0 0 12px;
+      margin: 0 0 32px;
       @include font_text(20px, 1.4, $WHITE, 500);
       text-align: left;
 
@@ -81,7 +81,7 @@
       }
 
       @media screen and (min-width: $DESKTOP){
-        margin: 0;
+
       }
     }
 

@@ -14,7 +14,7 @@ const Tools: React.FC = () => {
     </div>
   ));
 
-  const toolListElement = <ul className="tools__list">{toolItems}</ul>;
+  const toolListElement = <div className="tools__list">{toolItems}</div>;
 
   return <div className="tools">{toolListElement}</div>;
 };

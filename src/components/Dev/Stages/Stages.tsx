@@ -19,7 +19,7 @@ const Stages: React.FC = () => {
         </div>
         <div className="stages__item-image-wrapper">
           <img
-            className="stages__item-image stages__item-image_type_first"
+            className={`stages__item-image ${item.imgClass}`}
             src={item.imgSrc}
             alt={item.imgAlt}
           />

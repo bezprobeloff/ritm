@@ -2,6 +2,7 @@ import './Business.scss';
 import { ReactComponent as BusinessLine } from '../../../images/business-line.svg';
 import React, { useEffect, useRef, useState } from 'react';
 import useIntersection from 'react-use/lib/useIntersection';
+import { BUSINESS_ITEMS } from './constants';
 
 const Business: React.FC = () => {
   const businessElementRef = useRef(null);
@@ -15,6 +16,15 @@ const Business: React.FC = () => {
     threshold: THRESHOLD
   });
 
+  const businessItems = BUSINESS_ITEMS.map((item, index) => (
+    <li key={index} className="business__item">
+      <div className="business__item-icon-wrapper" />
+      <p className="business__item-description">{item.description}</p>
+    </li>
+  ));
+
+  const businessListElement = <ul className="business__list">{businessItems}</ul>;
+
   useEffect(() => {
     if (!isLineEnabled && intersection?.intersectionRatio === 1) {
       setIsLineEnabled(true);
@@ -27,32 +37,7 @@ const Business: React.FC = () => {
       <h3 ref={businessElementRef} className="section__subtitle business__title">
         Основные преимущества для вашего бизнеса
       </h3>
-      <ul className="business__list">
-        <li className="business__item">
-          <div className="business__item-icon-wrapper" />
-          <p className="business__item-description">
-            Мы специализируется на сложных решениях, связанных с глубокой аналитикой
-            бизнес-процессов. Совместно с вами мы изучим ваш бизнес и предложим наиболее оптимальное
-            и эффективное решение.
-          </p>
-        </li>
-        <li className="business__item">
-          <div className="business__item-icon-wrapper" />
-          <p className="business__item-description">
-            Наша стратегия построена на долгосрочных партнерских отношениях. Если сейчас у вас нет
-            сложных задач и вам требуется только простой сайт-визитка с обратной связью, мы с
-            удовольствием поможем вам.
-          </p>
-        </li>
-        <li className="business__item">
-          <div className="business__item-icon-wrapper" />
-          <p className="business__item-description">
-            На каждом этапе развития вашей компании мы поможем вам развивать собственную
-            IT-экосистему актуальную для ваших текущих задач и использующую самый современный стек
-            технологий.
-          </p>
-        </li>
-      </ul>
+      {businessListElement}
     </div>
   );
 };

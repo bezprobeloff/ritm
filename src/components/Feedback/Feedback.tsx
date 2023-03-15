@@ -13,8 +13,10 @@ import {
 } from './constants';
 
 const Feedback: React.FC = () => {
-  const form = useForm();
+  const formRef = useRef(null);
   const feedbackElementRef = useRef(null);
+  const form = useForm(formRef);
+
   const [isLineEnabled, setIsLineEnabled] = useState(false);
   const feedbackLineElement = isLineEnabled && <FormLine className="feedback__line" />;
   const ROOT_MARGIN = '20px';
@@ -47,7 +49,7 @@ const Feedback: React.FC = () => {
           Если вы хотите больше узнать о нас, наших технологиях и опыте работы, обсудить конкретную
           задачу или просто получить консультацию, напишите нам через форму обратной связи
         </p>
-        <form noValidate className="feedback__form" onSubmit={handleSubmit}>
+        <form noValidate ref={formRef} className="feedback__form" onSubmit={handleSubmit}>
           <Input
             name="name"
             placeholderText="Имя"
@@ -80,7 +82,7 @@ const Feedback: React.FC = () => {
           />
           <label className="feedback__form__checkbox">
             <input
-              name="data-policy"
+              name="policy"
               type="checkbox"
               className="feedback__form__checkbox-input"
               onChange={form.handleChange}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import './Popup.scss';
 
 type Props = {
@@ -13,11 +13,11 @@ const Popup: React.FC<Props> = ({ isOpen, onClose, children }) => {
     return evt.target === evt.currentTarget && onClose();
   };
 
-  const handleEscClosePopup = (evt: KeyboardEvent) => {
+  const handleEscClosePopup = useCallback((evt: KeyboardEvent) => {
     if (evt.key !== 'Escape') return;
 
     onClose();
-  };
+  }, []);
   const setHandleEscClosePopup = () => {
     document.addEventListener('keydown', handleEscClosePopup);
   };

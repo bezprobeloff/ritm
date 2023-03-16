@@ -64,7 +64,6 @@
 
       transform: translate(-50%, -50%) rotate(0deg);
       cursor: pointer;
-      z-index: 100;
       transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
 
       @media screen and (min-width: $PAD){

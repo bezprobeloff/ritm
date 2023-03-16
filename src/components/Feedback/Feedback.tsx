@@ -9,10 +9,16 @@ import { ReactComponent as FormLine } from '../../images/form-line.svg';
 import {
   INPUT_EMAIL_ATTRIBUTES,
   INPUT_MOBILE_ATTRIBUTES,
-  INPUT_NAME_ATTRIBUTES
+  INPUT_NAME_ATTRIBUTES,
+  InputNames
 } from './constants';
 
-const Feedback: React.FC = () => {
+type PropTypes = {
+  onSubmit: () => void;
+  isPreloaderEnabled: boolean;
+};
+
+const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
   const formRef = useRef(null);
   const feedbackElementRef = useRef(null);
   const form = useForm(formRef);
@@ -27,8 +33,13 @@ const Feedback: React.FC = () => {
     threshold: THRESHOLD
   });
 
+  const preloader = isPreloaderEnabled && (
+    <span className="feedback__form__preloader">Запрос отправляется...</span>
+  );
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
+
+    onSubmit();
   };
 
   useEffect(() => {
@@ -51,7 +62,7 @@ const Feedback: React.FC = () => {
         </p>
         <form noValidate ref={formRef} className="feedback__form" onSubmit={handleSubmit}>
           <Input
-            name="name"
+            name={InputNames.USER_NAME}
             placeholderText="Имя"
             typeInput="text"
             errors={form.errors}
@@ -59,7 +70,7 @@ const Feedback: React.FC = () => {
             onChange={form.handleChange}
           />
           <Input
-            name="mobile"
+            name={InputNames.USER_PHONE}
             placeholderText="Телефон"
             typeInput="tel"
             errors={form.errors}
@@ -67,7 +78,7 @@ const Feedback: React.FC = () => {
             onChange={form.handleChange}
           />
           <Input
-            name="email"
+            name={InputNames.USER_EMAIL}
             placeholderText="Email"
             typeInput="email"
             errors={form.errors}
@@ -75,14 +86,14 @@ const Feedback: React.FC = () => {
             onChange={form.handleChange}
           />
           <TextArea
-            name="textarea"
+            name={InputNames.USER_MESSAGE}
             placeholderText="Комментарий"
             errors={form.errors}
             onChange={form.handleChange}
           />
           <label className="feedback__form__checkbox">
             <input
-              name="policy"
+              name={InputNames.POLICY}
               type="checkbox"
               className="feedback__form__checkbox-input"
               onChange={form.handleChange}
@@ -92,13 +103,16 @@ const Feedback: React.FC = () => {
               Нажимая на кнопку, вы даете согласие на обработку своих персональных данных.
             </span>
           </label>
-          <button
-            className="button feedback__form-button-submit"
-            type="submit"
-            disabled={!form.isValid}
-          >
-            Отправить вопрос
-          </button>
+          {preloader}
+          {!isPreloaderEnabled && (
+            <button
+              className="button feedback__form__button-submit"
+              type="submit"
+              disabled={!form.isValid}
+            >
+              Отправить вопрос
+            </button>
+          )}
         </form>
       </div>
     </section>

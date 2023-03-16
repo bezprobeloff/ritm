@@ -1,4 +1,8 @@
 @import '../../styles/variables';
+@keyframes opacityAnimation {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
 .popup {
   width: 100vw;
@@ -10,17 +14,11 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(25, 66, 116, .69);
-  visibility: hidden;
   opacity: 0;
-  transition: visibility .5s, opacity 0.5s linear;
+  animation: opacityAnimation .5s forwards;
 
   @media screen and (min-width: $PAD) {
     padding: 0;
-  }
-
-  &_opened {
-    visibility: visible;
-    opacity: 1;
   }
 
   &__container {

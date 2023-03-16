@@ -1,25 +1,25 @@
 import { BASE_URL_API_RITM, BASE_URL_TEST } from './constants';
 
 interface IForm {
-  name: string;
-  phone: string;
-  email: string;
-  message: string;
+  userName: string;
+  userPhone: string;
+  userEmail: string;
+  userMessage: string;
   policy: boolean;
 }
 
-const checkResponse = (res: any) => {
+const checkResponse = (res: Response) => {
   if (res.ok) {
     return res.json();
   }
 
-  return res.json().then((err: any) => {
+  return res.json().then((err) => {
     err.statusCode = res.status;
     return Promise.reject(err);
   });
 };
 
-export const getTest = async (): Promise<any> => {
+export const getTest = async () => {
   try {
     const res = await fetch(BASE_URL_TEST);
     const data = await checkResponse(res);
@@ -29,7 +29,7 @@ export const getTest = async (): Promise<any> => {
   }
 };
 
-export const sendForm = async ({ name, phone, email, message, policy }: IForm): Promise<any> => {
+export const sendForm = async ({ userName, userPhone, userEmail, userMessage, policy }: IForm) => {
   try {
     const res = await fetch(`${BASE_URL_API_RITM}`, {
       method: 'POST',
@@ -38,10 +38,10 @@ export const sendForm = async ({ name, phone, email, message, policy }: IForm): 
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        userName: name,
-        userPhone: phone,
-        userEmail: email,
-        userMessage: message,
+        userName,
+        userPhone,
+        userEmail,
+        userMessage,
         policy: policy
       })
     });

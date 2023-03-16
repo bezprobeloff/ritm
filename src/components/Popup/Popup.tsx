@@ -1,39 +1,36 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Popup.scss';
+import { KEYBOARD_KEYS } from '../../utils/constants';
 
 type Props = {
-  isOpen: boolean;
-  onClose: () => void | React.MouseEvent;
-  children: React.ReactNode;
+  title?: string;
+  message: string;
+  closePopup: () => void;
 };
 
-const Popup: React.FC<Props> = ({ isOpen, onClose, children }) => {
-  const classPopupOpened = `${isOpen ? 'popup_opened' : ''}`;
-  const handleOverlayClose = (evt: React.MouseEvent) => {
-    return evt.target === evt.currentTarget && onClose();
-  };
-
-  const handleEscClosePopup = useCallback((evt: KeyboardEvent) => {
-    if (evt.key !== 'Escape') return;
-
-    onClose();
-  }, []);
-  const setHandleEscClosePopup = () => {
-    document.addEventListener('keydown', handleEscClosePopup);
-  };
-  const removeHandleEscClosePopup = () => {
-    document.removeEventListener('keydown', handleEscClosePopup);
-  };
-
+const Popup: React.FC<Props> = ({ closePopup, title, message }) => {
   useEffect(() => {
-    return isOpen ? setHandleEscClosePopup() : removeHandleEscClosePopup();
-  }, [isOpen]);
+    const handleEscPress = (event: KeyboardEvent) => {
+      if (event.key === KEYBOARD_KEYS.ESCAPE) {
+        closePopup();
+      }
+    };
+    document.addEventListener('keydown', handleEscPress);
+    return () => {
+      document.removeEventListener('keydown', handleEscPress);
+    };
+  }, [closePopup]);
+
+  const handleOverlayClose = (evt: React.MouseEvent) => {
+    return evt.target === evt.currentTarget && closePopup();
+  };
 
   return (
-    <div className={`popup ${classPopupOpened}`} onClick={handleOverlayClose}>
+    <div className="popup" onClick={handleOverlayClose}>
       <div className="popup__container">
-        <button className="popup__button-close" onClick={onClose} type="button"></button>
-        {children}
+        <button className="popup__button-close" onClick={closePopup} type="button"></button>
+        {title && <h3 className="popup__title">{title}</h3>}
+        <p className="popup__message">{message}</p>
       </div>
     </div>
   );

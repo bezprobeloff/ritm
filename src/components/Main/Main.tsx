@@ -7,13 +7,18 @@ import Feedback from '../Feedback/Feedback';
 import FAQ from '../FAQ/FAQ';
 import Contacts from '../Contacts/Contacts';
 
-const Main: React.FC = () => {
+type PropTypes = {
+  onSubmitFeedback: () => void;
+  isPreloaderFeedbackEnabled: boolean;
+};
+
+const Main: React.FC<PropTypes> = ({ onSubmitFeedback, isPreloaderFeedbackEnabled }) => {
   return (
     <main className="main">
       <Techs />
       <Dev />
       <Process />
-      <Feedback />
+      <Feedback onSubmit={onSubmitFeedback} isPreloaderEnabled={isPreloaderFeedbackEnabled} />
       <FAQ />
       <Contacts />
     </main>

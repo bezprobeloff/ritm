@@ -62,7 +62,7 @@
   }
 
   @media screen and (min-width: $DESKTOP) {
-    width: $DESKTOP;
+    max-width: $DESKTOP;
     padding: 24px 87px;
     justify-content: space-between;
   }

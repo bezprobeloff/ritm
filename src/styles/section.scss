@@ -27,7 +27,7 @@
     }
 
     @media screen and (min-width: $DESKTOP){
-      width: $DESKTOP;
+      max-width: $DESKTOP;
       padding: 0 84px;
     }
   }

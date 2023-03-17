@@ -5,6 +5,7 @@ type PropTypes = {
   name: string;
   typeInput: string;
   placeholderText: string;
+  value: string;
   errors: { [index: string]: string };
   validateAttributes: { [index: string]: string | boolean | number };
   onChange: React.ChangeEventHandler;
@@ -14,6 +15,7 @@ const Input: React.FC<PropTypes> = ({
   name,
   placeholderText,
   typeInput,
+  value,
   errors,
   onChange,
   validateAttributes
@@ -22,6 +24,7 @@ const Input: React.FC<PropTypes> = ({
     <label className="input">
       <input
         className="input__element"
+        value={value}
         name={name}
         type={typeInput}
         placeholder={placeholderText}

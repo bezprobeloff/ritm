@@ -40,6 +40,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
     evt.preventDefault();
 
     onSubmit();
+    form.resetForm();
   };
 
   useEffect(() => {
@@ -63,6 +64,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
         <form noValidate ref={formRef} className="feedback__form" onSubmit={handleSubmit}>
           <Input
             name={InputNames.USER_NAME}
+            value={form.values[InputNames.USER_NAME] || ''}
             placeholderText="Имя"
             typeInput="text"
             errors={form.errors}
@@ -71,6 +73,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
           />
           <Input
             name={InputNames.USER_PHONE}
+            value={form.values[InputNames.USER_PHONE] || ''}
             placeholderText="Телефон"
             typeInput="tel"
             errors={form.errors}
@@ -79,6 +82,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
           />
           <Input
             name={InputNames.USER_EMAIL}
+            value={form.values[InputNames.USER_EMAIL] || ''}
             placeholderText="Email"
             typeInput="email"
             errors={form.errors}
@@ -87,6 +91,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
           />
           <TextArea
             name={InputNames.USER_MESSAGE}
+            value={form.values[InputNames.USER_MESSAGE] || ''}
             placeholderText="Комментарий"
             errors={form.errors}
             onChange={form.handleChange}
@@ -94,6 +99,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
           <label className="feedback__form__checkbox">
             <input
               name={InputNames.POLICY}
+              checked={form.checkboxValues[InputNames.POLICY] || false}
               type="checkbox"
               className="feedback__form__checkbox-input"
               onChange={form.handleChange}

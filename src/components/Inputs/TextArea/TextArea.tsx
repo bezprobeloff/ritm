@@ -3,6 +3,7 @@ import '../Input.scss';
 
 type PropTypes = {
   name: string;
+  value: string;
   placeholderText: string;
   errors: { [index: string]: string };
   validateAttributes?: { [index: string]: string | boolean | number };
@@ -11,6 +12,7 @@ type PropTypes = {
 
 const TextArea: React.FC<PropTypes> = ({
   name,
+  value,
   placeholderText,
   errors,
   validateAttributes,
@@ -19,7 +21,8 @@ const TextArea: React.FC<PropTypes> = ({
   return (
     <label className="input input_type_textarea feedback__form-textarea">
       <textarea
-        name="textarea"
+        name={name}
+        value={value}
         className="input__element input__element_type_textarea"
         placeholder={placeholderText}
         onChange={onChange}

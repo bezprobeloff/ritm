@@ -4,8 +4,9 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import Popup from '../Popup/Popup';
-import { getTest } from '../../utils/ApiRitm';
+import { getTest, sendForm } from '../../utils/ApiRitm';
 import { MESSAGE_SUCCESS } from '../../utils/constants';
+import { TDataFeedback } from '../../types/types';
 
 interface TPopupPropsState {
   title?: string;
@@ -27,11 +28,17 @@ function App() {
     setIsPopupOpened(true);
   };
 
-  const onSubmitFeedback = async () => {
+  const onSubmitFeedback = async (dataForm: TDataFeedback) => {
     setIsPreloaderFeedbackEnabled(true);
     try {
+      // для теста попапа
       const test = await getTest();
       console.log(test);
+      //
+
+      // раскомментировать для отправки формы
+      //await sendForm(dataForm);
+
       setPopupProps({ title: MESSAGE_SUCCESS.title, message: MESSAGE_SUCCESS.message });
       openPopup();
     } catch (e) {

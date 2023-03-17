@@ -12,9 +12,10 @@ import {
   INPUT_NAME_ATTRIBUTES,
   InputNames
 } from './constants';
+import { TDataFeedback } from '../../types/types';
 
 type PropTypes = {
-  onSubmit: () => void;
+  onSubmit: (dataForm: TDataFeedback) => void;
   isPreloaderEnabled: boolean;
 };
 
@@ -39,7 +40,17 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
 
-    onSubmit();
+    const dataForm: TDataFeedback = {
+      policy: false,
+      userEmail: '',
+      userMessage: '',
+      userName: '',
+      userPhone: '',
+      ...form.values,
+      ...form.checkboxValues
+    };
+
+    onSubmit(dataForm);
     form.resetForm();
   };
 

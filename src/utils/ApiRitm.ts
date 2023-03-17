@@ -1,12 +1,5 @@
 import { BASE_URL_API_RITM, BASE_URL_TEST } from './constants';
-
-interface IForm {
-  userName: string;
-  userPhone: string;
-  userEmail: string;
-  userMessage: string;
-  policy: boolean;
-}
+import { TDataFeedback } from '../types/types';
 
 const checkResponse = (res: Response) => {
   if (res.ok) {
@@ -29,7 +22,13 @@ export const getTest = async () => {
   }
 };
 
-export const sendForm = async ({ userName, userPhone, userEmail, userMessage, policy }: IForm) => {
+export const sendForm = async ({
+  userName,
+  userPhone,
+  userEmail,
+  userMessage = '',
+  policy
+}: TDataFeedback) => {
   try {
     const res = await fetch(`${BASE_URL_API_RITM}`, {
       method: 'POST',

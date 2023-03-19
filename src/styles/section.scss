@@ -85,7 +85,7 @@
       row-gap: 40px;
     }
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       grid-template-columns: repeat(2, 1fr);
       column-gap: 29px;
       row-gap: 33px;

@@ -60,7 +60,7 @@
       margin: 0;
       @include font_text(10px, 1.33, $WHITE);
 
-      @media screen and (min-width: $DESKTOP){
+      @media screen and (min-width: $PAD){
         font-size: 18px;
         line-height: 1.33;
       }

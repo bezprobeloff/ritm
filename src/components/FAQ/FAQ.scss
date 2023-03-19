@@ -116,7 +116,7 @@
         font-size: 24px;
       }
 
-      @media screen and (min-width: $DESKTOP){
+      @media screen and (min-width: $DESKTOP_MIN){
         max-width: 829px;
       }
     }
@@ -139,13 +139,13 @@
 
     @media screen and (min-width: $PAD){
       padding-top: 24px;
-      width: 560px;
+      max-width: 560px;
       font-size: 18px;
       line-height: 1.33;
     }
 
-    @media screen and (min-width: $DESKTOP){
-      width: 939px;
+    @media screen and (min-width: $DESKTOP_MIN){
+      max-width: 939px;
     }
   }
 

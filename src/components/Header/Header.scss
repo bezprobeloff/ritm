@@ -50,10 +50,13 @@
     padding: 26px 45px 0;
   }
 
-  @media screen and (min-width: $DESKTOP) {
-    max-width: $DESKTOP;
+  @media screen and (min-width: $DESKTOP_MIN) {
     padding: 24px 87px;
     justify-content: space-between;
+  }
+
+  @media screen and (min-width: $DESKTOP) {
+    max-width: $DESKTOP;
   }
 
   &__logo-link {
@@ -61,7 +64,7 @@
     display: flex;
     flex: 1;
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       flex: 0;
       z-index: 0;
     }
@@ -113,7 +116,7 @@
       cursor: pointer;
     }
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       display: none;
     }
   }
@@ -121,7 +124,7 @@
   &__nav {
     display: none;
 
-    @media screen and (max-width: $DESKTOP_WITHOUT){
+    @media screen and (max-width: $DESKTOP_MIN_WITHOUT){
       &_opened {
         position: absolute;
         width: 100%;
@@ -138,13 +141,13 @@
     }
 
     @media screen and (min-width: $PAD)
-    and (max-width: $DESKTOP_WITHOUT){
+    and (max-width: $DESKTOP_MIN_WITHOUT){
       &_opened {
         padding-top: 128px;
       }
     }
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -158,7 +161,7 @@
         margin-left: 46px;
       }
 
-      @media screen and (min-width: $DESKTOP){
+      @media screen and (min-width: $DESKTOP_MIN){
         margin-left: 24px;
         font-weight: 700;
       }
@@ -170,7 +173,7 @@
     margin: 0;
     order: 2;
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       order: 0;
       margin-left: 32px;
     }
@@ -190,7 +193,7 @@
       line-height: 1.17;
     }
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       height: 350px;
       margin: 140px 65px 65px;
       font-size: 60px;
@@ -201,6 +204,5 @@
   &__title-span {
     color: $BLUE;
   }
-
 }
 

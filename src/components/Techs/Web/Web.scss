@@ -15,7 +15,7 @@
   }
 
   &__title {
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
       max-width: 914px;
     }
   }

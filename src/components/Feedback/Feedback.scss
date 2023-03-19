@@ -1,32 +1,10 @@
 @import '../../styles/_variables.scss';
-// анимация линии
-@keyframes form-line {
-  100% {stroke-dasharray:3500,0;}
-}
-
-// класс для svg-линии
-.form-line {
-  stroke-dasharray:0,3500;
-  animation: tech-line 5s linear forwards 0s;
-}
-
 
 .feedback {
   @media screen and (min-width: $DESKTOP){
     margin-bottom: 190px;
   }
 
-  &__line {
-    display: none;
-
-    @media screen and (min-width: $DESKTOP){
-      display: block;
-      position: absolute;
-      top: 18px;
-      left: 118px;
-      z-index: -1;
-    }
-  }
   &__wrapper {
     @media screen and (min-width: $DESKTOP){
       position: relative;

@@ -1,0 +1,29 @@
+@import '../../../styles/_variables.scss';
+
+@keyframes contact-line {
+  100% {stroke-dasharray:3500,0;}
+}
+
+// класс для svg-линии
+.contact-line {
+  stroke-dasharray:0,3500;
+  animation: contact-line 5s linear forwards 0s;
+}
+
+.contact-line-wrapper {
+  position: relative;
+  width: 0;
+  height: 0
+}
+
+.contact-line-element {
+  display: none;
+
+  @media screen and (min-width: $DESKTOP){
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: -86px;
+    z-index: -1;
+  }
+}

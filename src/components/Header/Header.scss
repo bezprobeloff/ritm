@@ -1,10 +1,5 @@
 @import '../../styles/_variables.scss';
 
-// анимация линии
-@keyframes header-line {
-  100% {stroke-dasharray:3500,0;}
-}
-
 @mixin menu-icon ($height, $width, $top) {
   transition-duration: 0.5s;
   position: absolute;
@@ -40,12 +35,6 @@
   left: 0;
 }
 
-// класс для svg-линии
-.header-line {
-  stroke-dasharray:0,3500;
-  animation: header-line 5s linear forwards 0s;
-}
-
 .header {
   position: relative;
   display: flex;
@@ -67,17 +56,6 @@
     justify-content: space-between;
   }
 
-  &__line {
-    display: none;
-
-    @media screen and (min-width: $DESKTOP){
-      display: block;
-      position: absolute;
-      top: 35px;
-      left: 0;
-      z-index: -1;
-    }
-  }
   &__logo-link {
     z-index: 1;
     display: flex;

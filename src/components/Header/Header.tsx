@@ -1,28 +1,11 @@
 import logo from '../../images/logo.svg';
 import './Header.scss';
-import { ReactComponent as HeaderLine } from '../../images/header-line.svg';
-import React, { useEffect, useRef, useState } from 'react';
-import useIntersection from 'react-use/lib/useIntersection';
+import React, { useState } from 'react';
 import Navigation from '../Navigation/Navigation';
+import HeaderLine from '../Lines/HeaderLine/HeaderLine';
 
 const Header: React.FC = () => {
-  const headerElementRef = useRef(null);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const [isLineEnabled, setIsLineEnabled] = useState(false);
-  const headerLineElement = isLineEnabled && <HeaderLine className="header__line" />;
-  const ROOT_MARGIN = '20px';
-  const THRESHOLD = 1;
-  const intersection = useIntersection(headerElementRef, {
-    root: null,
-    rootMargin: ROOT_MARGIN,
-    threshold: THRESHOLD
-  });
-
-  useEffect(() => {
-    if (!isLineEnabled && intersection?.intersectionRatio === 1) {
-      setIsLineEnabled(true);
-    }
-  }, [intersection, isLineEnabled]);
 
   const classButtonMenu = `header__button-menu${isMenuOpened ? ' header__button-menu_opened' : ''}`;
   const classNav = `header__nav${isMenuOpened ? ' header__nav_opened' : ''}`;
@@ -38,8 +21,8 @@ const Header: React.FC = () => {
 
   return (
     <header id="header" className="header">
-      {headerLineElement}
-      <a href="/" className="header__logo-link" ref={headerElementRef}>
+      <HeaderLine />
+      <a href="/" className="header__logo-link">
         <img src={logo} className="header__logo" alt="Логотип" />
       </a>
       <button className={classButtonMenu} onClick={handleOnButtonMenu}>

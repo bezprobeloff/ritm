@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import useIntersection from 'react-use/lib/useIntersection';
+import React, { useRef } from 'react';
 import useForm from '../../utils/hooks/useForm';
 import Input from '../Inputs/Input/Input';
 import TextArea from '../Inputs/TextArea/TextArea';
 
 import './Feedback.scss';
-import { ReactComponent as FormLine } from '../../images/form-line.svg';
 import {
   INPUT_EMAIL_ATTRIBUTES,
   INPUT_MOBILE_ATTRIBUTES,
@@ -13,6 +11,7 @@ import {
   InputNames
 } from './constants';
 import { TDataFeedback } from '../../types/types';
+import FeedbackLine from '../Lines/FeedbackLine/FeedbackLine';
 
 type PropTypes = {
   onSubmit: (dataForm: TDataFeedback) => void;
@@ -21,18 +20,7 @@ type PropTypes = {
 
 const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
   const formRef = useRef(null);
-  const feedbackElementRef = useRef(null);
   const form = useForm(formRef);
-
-  const [isLineEnabled, setIsLineEnabled] = useState(false);
-  const feedbackLineElement = isLineEnabled && <FormLine className="feedback__line" />;
-  const ROOT_MARGIN = '20px';
-  const THRESHOLD = 1;
-  const intersection = useIntersection(feedbackElementRef, {
-    root: null,
-    rootMargin: ROOT_MARGIN,
-    threshold: THRESHOLD
-  });
 
   const preloader = isPreloaderEnabled && (
     <span className="feedback__form__preloader">Запрос отправляется...</span>
@@ -54,19 +42,11 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
     form.resetForm();
   };
 
-  useEffect(() => {
-    if (!isLineEnabled && intersection?.intersectionRatio === 1) {
-      setIsLineEnabled(true);
-    }
-  }, [intersection, isLineEnabled]);
-
   return (
     <section id="feedback" className="section feedback">
       <div className="section__wrapper feedback__wrapper">
-        {feedbackLineElement}
-        <h2 className="section__title" ref={feedbackElementRef}>
-          Форма обратной связи
-        </h2>
+        <FeedbackLine />
+        <h2 className="section__title">Форма обратной связи</h2>
         <h3 className="section__subtitle feedback__subtitle">Получить консультацию</h3>
         <p className="feedback__description">
           Если вы хотите больше узнать о нас, наших технологиях и опыте работы, обсудить конкретную

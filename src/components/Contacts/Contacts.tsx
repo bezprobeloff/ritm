@@ -1,12 +1,14 @@
-import './Contacts.scss';
 import React from 'react';
-import ContactLine from '../Lines/ContactLine/ContactLine';
+
+import { ReactComponent as ContactLine } from '../../images/contact-line.svg';
+import Line from '../Line/Line';
+import './Contacts.scss';
 
 const Contacts: React.FC = () => {
   return (
     <section id="contacts" className="section contacts">
       <div className="section__wrapper contacts__wrapper">
-        <ContactLine />
+        <Line lineSVG={ContactLine} classLineSVG="contacts__line" />
         <h2 className="section__title">Контакты</h2>
         <h3 className="section__subtitle contacts__subtitle">Как с нами связаться</h3>
         <div className="contacts__list">

@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
+import Line from '../Line/Line';
+import Navigation from '../Navigation/Navigation';
 import logo from '../../images/logo.svg';
 import './Header.scss';
-import React, { useState } from 'react';
-import Navigation from '../Navigation/Navigation';
-import HeaderLine from '../Lines/HeaderLine/HeaderLine';
+import { ReactComponent as HeaderLine1 } from '../../images/header-line1.svg';
+import { ReactComponent as HeaderLine2 } from '../../images/header-line2.svg';
 
 const Header: React.FC = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -21,7 +23,7 @@ const Header: React.FC = () => {
 
   return (
     <header id="header" className="header">
-      <HeaderLine />
+      <Line lineSVG={HeaderLine1} classLineSVG="header__line1" />
       <a href="/" className="header__logo-link">
         <img src={logo} className="header__logo" alt="Логотип" />
       </a>
@@ -42,6 +44,7 @@ const Header: React.FC = () => {
         </span>
         , которые помогают оптимизировать бизнес-процессы и решить сложные управленческие задачи
       </h1>
+      <Line lineSVG={HeaderLine2} classLineSVG="header__line2" />
     </header>
   );
 };

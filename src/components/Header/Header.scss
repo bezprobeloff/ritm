@@ -35,6 +35,22 @@
   left: 0;
 }
 
+@keyframes header-line {
+  100% {stroke-dasharray:1500,0;}
+}
+
+// класс для svg-линии
+.header-line1-svg {
+  stroke-dasharray:0,1500;
+  animation: header-line 3s linear forwards 0s;
+}
+
+// класс для svg-линии
+.header-line2-svg {
+  stroke-dasharray:0,1500;
+  animation: header-line 3s linear forwards 0s;
+}
+
 .header {
   position: relative;
   display: flex;
@@ -57,6 +73,16 @@
 
   @media screen and (min-width: $DESKTOP) {
     max-width: $DESKTOP;
+  }
+
+  &__line1 {
+    top: -16px;
+    left: -87px;
+  }
+
+  &__line2 {
+    bottom: -208px;
+    left: 56px;
   }
 
   &__logo-link {
@@ -194,7 +220,7 @@
     }
 
     @media screen and (min-width: $DESKTOP_MIN){
-      height: 350px;
+      min-height: 350px;
       margin: 140px 65px 65px;
       font-size: 60px;
       line-height: 1.17;

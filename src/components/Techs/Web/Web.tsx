@@ -1,8 +1,9 @@
-import '../../../styles/section.scss';
-import './Web.scss';
 import React from 'react';
 import { WEB_ITEMS } from './constants';
-import TechLine from '../../Lines/TechLine/TechLine';
+import Line from '../../Line/Line';
+import { ReactComponent as TechLine1 } from '../../../images/tech-line1.svg';
+import '../../../styles/section.scss';
+import './Web.scss';
 
 const Web: React.FC = () => {
   const webItems = WEB_ITEMS.map((item, index) => (
@@ -21,7 +22,7 @@ const Web: React.FC = () => {
         основных частей
       </h3>
       {webListElement}
-      <TechLine />
+      <Line lineSVG={TechLine1} classLineSVG="techs__line1" />
     </div>
   );
 };

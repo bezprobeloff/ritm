@@ -8,4 +8,6 @@ const defaultState = {
   scrollPosition: 0
 };
 
-export const LineContext = React.createContext<ILineContext>(defaultState);
+const LineContext = React.createContext<ILineContext>(defaultState);
+
+export default LineContext;

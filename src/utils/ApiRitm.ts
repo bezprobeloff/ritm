@@ -7,8 +7,9 @@ const checkResponse = (res: Response) => {
   }
 
   return res.json().then((err) => {
-    err.statusCode = res.status;
-    return Promise.reject(err);
+    const error = err;
+    error.statusCode = res.status;
+    return Promise.reject(error);
   });
 };
 
@@ -41,7 +42,7 @@ export const sendForm = async ({
         userPhone,
         userEmail,
         userMessage,
-        policy: policy
+        policy
       })
     });
     const data = await checkResponse(res);

@@ -27,14 +27,10 @@ const Header: React.FC = () => {
       <a href="/" className="header__logo-link">
         <img src={logo} className="header__logo" alt="Логотип" />
       </a>
-      <button className={classButtonMenu} onClick={handleOnButtonMenu}>
+      <button type="button" className={classButtonMenu} onClick={handleOnButtonMenu}>
         <span className="header__button-menu-icon" />
       </button>
-      <Navigation
-        classNameNav={classNav}
-        classNameLink={classLink}
-        onClick={handleOnNavLink}
-      ></Navigation>
+      <Navigation classNameNav={classNav} classNameLink={classLink} onClick={handleOnNavLink} />
       <a href="#feedback" className="button header__button-link">
         Обсудить проект
       </a>
@@ -42,7 +38,8 @@ const Header: React.FC = () => {
         <span className="header__title-span">
           Разрабатываем и&nbsp;внедряем веб&#8209;приложения
         </span>
-        , которые помогают оптимизировать бизнес-процессы и решить сложные управленческие задачи
+        , которые помогают оптимизировать бизнес-процессы и&nbsp;решить сложные управленческие
+        задачи
       </h1>
       <Line lineSVG={HeaderLine2} classLineSVG="header__line2" />
     </header>

@@ -21,8 +21,9 @@ const Input: React.FC<PropTypes> = ({
   validateAttributes
 }) => {
   return (
-    <label className="input">
+    <label htmlFor={name} className="input">
       <input
+        id={name}
         className="input__element"
         value={value}
         name={name}

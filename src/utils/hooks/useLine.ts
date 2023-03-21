@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from 'react';
 import useIntersection from 'react-use/lib/useIntersection';
 
-//хук отображения линий
+// хук отображения линий
 const useLine = (intersectionRef: RefObject<HTMLElement>) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const ROOT_MARGIN = '20px';

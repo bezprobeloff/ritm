@@ -5,14 +5,18 @@ import { STAGES } from './constants';
 
 const Stages: React.FC = () => {
   const stageItems = STAGES.map((item, indexItem) => {
-    const descriptionElements = item.descriptions.map((text, indexText) => (
-      <p key={'text' + indexText} className="stages__item-description">
-        {text}
-      </p>
-    ));
+    const itemKey = `item${indexItem}`;
+    const descriptionElements = item.descriptions.map((text, indexText) => {
+      const itemTextKey = `itemText${indexText}`;
+      return (
+        <p key={itemTextKey} className="stages__item-description">
+          {text}
+        </p>
+      );
+    });
 
     return (
-      <li key={'item' + indexItem} className="stages__item">
+      <li key={itemKey} className="stages__item">
         <div className="stages__item-text-wrap">
           <p className="stages__item-title">{item.title}</p>
           {descriptionElements}

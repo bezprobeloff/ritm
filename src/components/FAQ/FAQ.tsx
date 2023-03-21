@@ -3,15 +3,18 @@ import React from 'react';
 import { FAQ_ITEMS } from './constants';
 
 const FAQ: React.FC = () => {
-  const faqItems = FAQ_ITEMS.map((item, index) => (
-    <details key={index} open={item.isOpened} className="faq__details">
-      <summary className="faq__question">
-        <span className="faq__question-icon" />
-        <p className="faq__question-text">{item.questionText}</p>
-      </summary>
-      <p className="faq__answer">{item.answerText}</p>
-    </details>
-  ));
+  const faqItems = FAQ_ITEMS.map((item, index) => {
+    const itemKey = `item${index}`;
+    return (
+      <details key={itemKey} open={item.isOpened} className="faq__details">
+        <summary className="faq__question">
+          <span className="faq__question-icon" />
+          <p className="faq__question-text">{item.questionText}</p>
+        </summary>
+        <p className="faq__answer">{item.answerText}</p>
+      </details>
+    );
+  });
 
   const faqListElement = <div className="faq__list">{faqItems}</div>;
 

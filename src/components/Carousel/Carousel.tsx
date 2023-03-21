@@ -20,7 +20,8 @@ const Carousel: React.FC<Props> = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const updateIndex = (newIndex: number) => {
+  const updateIndex = (index: number) => {
+    let newIndex = index;
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
     } else if (newIndex >= React.Children.count(children)) {
@@ -63,13 +64,15 @@ const Carousel: React.FC<Props> = ({ children }) => {
         {React.Children.map(children, (child, index) => {
           return (
             <button
+              type="button"
               className={`carousel__indicators-button${
                 index === activeIndex ? ' carousel__indicators-button_active' : ''
               }`}
               onClick={() => {
                 updateIndex(index);
               }}
-            ></button>
+              aria-label="Переключатель слайда"
+            />
           );
         })}
       </div>

@@ -19,8 +19,9 @@ const TextArea: React.FC<PropTypes> = ({
   onChange
 }) => {
   return (
-    <label className="input input_type_textarea feedback__form-textarea">
+    <label htmlFor={name} className="input input_type_textarea feedback__form-textarea">
       <textarea
+        id={name}
         name={name}
         value={value}
         className="input__element input__element_type_textarea"

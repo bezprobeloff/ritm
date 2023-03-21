@@ -2,6 +2,7 @@ import imageStep1 from '../../../images/image-step1.svg';
 import imageStep2 from '../../../images/image-step2.svg';
 import imageStep3 from '../../../images/image-step3.svg';
 import imageStep4 from '../../../images/image-step4.svg';
+
 interface TStage {
   title: string;
   descriptions: string[];

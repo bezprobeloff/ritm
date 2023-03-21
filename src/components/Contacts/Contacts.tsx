@@ -13,11 +13,11 @@ const Contacts: React.FC = () => {
         <div className="contacts__list">
           <p className="contacts__item">Контактное лицо: Вадим&nbsp;Бакуров, CEO</p>
           <a href="tel: +79623500014" title="Позвонить" className="contacts__item">
-            <span className="contacts__item-icon contacts__item-icon_type_mobile"></span>
+            <span className="contacts__item-icon contacts__item-icon_type_mobile" />
             +7 (962) 350-00-14
           </a>
           <a href="mailto: vb@ritm.studio" title="Отправить почту" className="contacts__item">
-            <span className="contacts__item-icon contacts__item-icon_type_email"></span>
+            <span className="contacts__item-icon contacts__item-icon_type_email" />
             vb@ritm.studio
           </a>
         </div>

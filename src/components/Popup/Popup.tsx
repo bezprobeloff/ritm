@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import './Popup.scss';
 import { KEYBOARD_KEYS } from '../../utils/constants';
 
-type Props = {
+type TProps = {
   title?: string;
   message: string;
   closePopup: () => void;
 };
 
-const Popup: React.FC<Props> = ({ closePopup, title, message }) => {
+const Popup: React.FC<TProps> = ({ closePopup, title, message }) => {
   useEffect(() => {
     const handleEscPress = (event: KeyboardEvent) => {
       if (event.key === KEYBOARD_KEYS.ESCAPE) {
@@ -21,14 +21,24 @@ const Popup: React.FC<Props> = ({ closePopup, title, message }) => {
     };
   }, [closePopup]);
 
-  const handleOverlayClose = (evt: React.MouseEvent) => {
+  const handleOverlayClose = (evt: React.MouseEvent | React.KeyboardEvent) => {
     return evt.target === evt.currentTarget && closePopup();
   };
 
   return (
-    <div className="popup" onClick={handleOverlayClose}>
+    <div
+      className="popup"
+      onClick={handleOverlayClose}
+      onKeyDown={handleOverlayClose}
+      role="presentation"
+    >
       <div className="popup__container">
-        <button className="popup__button-close" onClick={closePopup} type="button"></button>
+        <button
+          className="popup__button-close"
+          onClick={closePopup}
+          type="button"
+          aria-label="Кнопка закрытия попапа"
+        />
         {title && <h3 className="popup__title">{title}</h3>}
         <p className="popup__message">{message}</p>
       </div>

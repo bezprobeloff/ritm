@@ -34,10 +34,9 @@ function App() {
       // для теста попапа
       const test = await getTest();
       console.log(test);
-      //
 
       // раскомментировать для отправки формы
-      //await sendForm(dataForm);
+      // await sendForm(dataForm);
 
       setPopupProps({ title: MESSAGE_SUCCESS.title, message: MESSAGE_SUCCESS.message });
       openPopup();

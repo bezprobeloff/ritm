@@ -88,8 +88,9 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
             errors={form.errors}
             onChange={form.handleChange}
           />
-          <label className="feedback__form__checkbox">
+          <label htmlFor={InputNames.POLICY} className="feedback__form__checkbox">
             <input
+              id={InputNames.POLICY}
               name={InputNames.POLICY}
               checked={form.checkboxValues[InputNames.POLICY] || false}
               type="checkbox"

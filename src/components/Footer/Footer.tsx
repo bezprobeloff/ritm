@@ -1,6 +1,6 @@
+import React from 'react';
 import './Footer.scss';
 import logo from '../../images/logo.svg';
-import React from 'react';
 import Navigation from '../Navigation/Navigation';
 
 const Footer: React.FC = () => {

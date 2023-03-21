@@ -9,8 +9,9 @@ type Props = {
 
 const Navigation: React.FC<Props> = ({ classNameNav, classNameLink, onClick }) => {
   const linkElements = LINKS.map((item, index) => {
+    const linkKey = `link${index}`;
     return (
-      <a key={index} href={item.href} className={classNameLink} onClick={onClick}>
+      <a key={linkKey} href={item.href} className={classNameLink} onClick={onClick}>
         {item.text}
       </a>
     );

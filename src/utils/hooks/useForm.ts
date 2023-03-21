@@ -1,11 +1,12 @@
 import React, { RefObject, useCallback, useState } from 'react';
+
 interface TValues {
   [index: string]: string;
 }
 interface TCheckboxValues {
   [index: string]: boolean;
 }
-//хук управления формой и валидации формы
+// хук управления формой и валидации формы
 const useFormWithValidation = (formRef: RefObject<HTMLFormElement>) => {
   const [values, setValues] = useState<TValues>({});
   const [checkboxValues, setCheckboxValues] = useState<TCheckboxValues>({});
@@ -13,11 +14,9 @@ const useFormWithValidation = (formRef: RefObject<HTMLFormElement>) => {
   const [isValid, setIsValid] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const target = event.target;
-    const type: string = target.type;
+    const { target } = event;
+    const { type, name, value } = target;
     const isCheckboxType = type === 'checkbox' || type === 'radio';
-    const name: string = target.name;
-    const value: string = target.value;
     const checked: boolean = isCheckboxType ? target.checked : false;
     const form = formRef.current;
 

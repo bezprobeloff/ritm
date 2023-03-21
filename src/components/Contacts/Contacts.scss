@@ -47,11 +47,12 @@
   }
 
   &__list {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     row-gap: 24px;
 
-    @media screen and (min-width: $DESKTOP){
+    @media screen and (min-width: $DESKTOP_MIN){
     }
   }
 

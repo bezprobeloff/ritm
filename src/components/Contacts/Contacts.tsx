@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ReactComponent as ContactLine } from '../../images/contact-line.svg';
 import Line from '../Line/Line';
 import './Contacts.scss';

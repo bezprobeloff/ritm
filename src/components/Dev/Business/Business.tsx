@@ -1,7 +1,9 @@
-import './Business.scss';
 import React from 'react';
+import Line from '../../Line/Line';
 import { BUSINESS_ITEMS } from './constants';
-import BusinessLine from '../../Lines/BusinessLine/BusinessLine';
+import { ReactComponent as BusinessLine } from '../../../images/business-line.svg';
+
+import './Business.scss';
 
 const Business: React.FC = () => {
   const businessItems = BUSINESS_ITEMS.map((item, index) => (
@@ -15,7 +17,7 @@ const Business: React.FC = () => {
 
   return (
     <div className="business">
-      <BusinessLine />
+      <Line lineSVG={BusinessLine} classLineSVG="business__line" />
       <h3 className="section__subtitle business__title">
         Основные преимущества для вашего бизнеса
       </h3>

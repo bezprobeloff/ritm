@@ -1,5 +1,15 @@
 @import '../../../styles/_variables.scss';
 
+@keyframes business-line {
+  100% {stroke-dasharray:2500,0;}
+}
+
+// класс для svg-линии
+.business-line-svg {
+  stroke-dasharray:0,2500;
+  animation: business-line 3s linear forwards 0s;
+}
+
 .business {
   position: relative;
   display: flex;
@@ -8,6 +18,11 @@
 
   @media screen and (min-width: $DESKTOP){
     width: 1052px;
+  }
+
+  &__line {
+    top: -44px;
+    left: -193px;
   }
 
   &__title {

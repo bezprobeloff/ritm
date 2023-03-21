@@ -3,8 +3,7 @@ import useForm from '../../utils/hooks/useForm';
 import Input from '../Inputs/Input/Input';
 import TextArea from '../Inputs/TextArea/TextArea';
 import Line from '../Line/Line';
-import { ReactComponent as FeedbackLine1 } from '../../images/feedback-line1.svg';
-import { ReactComponent as FeedbackLine2 } from '../../images/feedback-line2.svg';
+import { ReactComponent as FeedbackLine } from '../../images/feedback-line.svg';
 
 import './Feedback.scss';
 import {
@@ -47,7 +46,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
   return (
     <section id="feedback" className="section feedback">
       <div className="section__wrapper feedback__wrapper">
-        <Line lineSVG={FeedbackLine1} classLineSVG="feedback__line1" />
+        <Line lineSVG={FeedbackLine} classLineSVG="feedback__line" />
         <h2 className="section__title">Форма обратной связи</h2>
         <h3 className="section__subtitle feedback__subtitle">Получить консультацию</h3>
         <p className="feedback__description">
@@ -113,7 +112,6 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
             </button>
           )}
         </form>
-        <Line lineSVG={FeedbackLine2} classLineSVG="feedback__line2" />
       </div>
     </section>
   );

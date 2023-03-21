@@ -1,5 +1,5 @@
-import Line from '../Line/Line';
 import React from 'react';
+import Line from '../Line/Line';
 import '../../styles/section.scss';
 import './Techs.scss';
 import Web from './Web/Web';

@@ -22,7 +22,7 @@ const Web: React.FC = () => {
         основных частей
       </h3>
       {webListElement}
-      <Line lineSVG={TechLine1} classLineSVG="techs__line1" />
+      <Line lineSVG={TechLine1} classLineSVG="web__line" />
     </div>
   );
 };

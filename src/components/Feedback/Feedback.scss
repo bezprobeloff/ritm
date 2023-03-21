@@ -1,18 +1,12 @@
 @import '../../styles/_variables.scss';
 
 @keyframes feedback-line {
-  100% {stroke-dasharray:1500,0;}
+  100% {stroke-dasharray:3000,0;}
 }
 
 // класс для svg-линии
-.feedback-line1-svg {
-  stroke-dasharray:0,1500;
-  animation: feedback-line 3s linear forwards 0s;
-}
-
-// класс для svg-линии
-.feedback-line2-svg {
-  stroke-dasharray:0,1500;
+.feedback-line-svg {
+  stroke-dasharray:0,3000;
   animation: feedback-line 3s linear forwards 0s;
 }
 
@@ -28,14 +22,9 @@
     }
   }
 
-  &__line1 {
-    top: 18px;
-    left: 40px;
-  }
-
-  &__line2 {
-    bottom: -216px;
-    left: 30px;
+  &__line {
+    top: 19px;
+    left: 32px;
   }
 
   &__subtitle {

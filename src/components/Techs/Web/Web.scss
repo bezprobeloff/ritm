@@ -14,6 +14,11 @@
     margin-bottom: 160px;
   }
 
+  &__line {
+    top: -32px;
+    left: 58px;
+  }
+
   &__title {
     @media screen and (min-width: $DESKTOP_MIN){
       max-width: 914px;

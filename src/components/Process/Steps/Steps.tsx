@@ -1,6 +1,6 @@
-import './Steps.scss';
 import React from 'react';
-import { STEPS } from './constants';
+import './Steps.scss';
+import STEPS from './constants';
 
 const Steps: React.FC = () => {
   const stepItems = STEPS.map((item, index) => {

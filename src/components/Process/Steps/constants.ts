@@ -34,4 +34,4 @@ const STEPS: TStep[] = [
   }
 ];
 
-export { STEPS };
+export default STEPS;

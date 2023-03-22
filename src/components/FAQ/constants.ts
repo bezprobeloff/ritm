@@ -30,4 +30,4 @@ const FAQ_ITEMS: TFAQ[] = [
   }
 ];
 
-export { FAQ_ITEMS };
+export default FAQ_ITEMS;

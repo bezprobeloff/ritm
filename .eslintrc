@@ -38,8 +38,7 @@
         ]
       }
     ],
-    "import/prefer-default-export": "warn",
-    "react/require-default-props": "warn",
+    "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",

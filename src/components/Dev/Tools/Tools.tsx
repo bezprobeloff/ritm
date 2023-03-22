@@ -1,6 +1,6 @@
-import './Tools.scss';
 import React from 'react';
-import { TOOLS } from './constants';
+import './Tools.scss';
+import TOOLS from './constants';
 
 const Tools: React.FC = () => {
   const toolItems = TOOLS.map((item, index) => {

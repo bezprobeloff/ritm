@@ -5,7 +5,7 @@ import '../../../styles/section.scss';
 import './Advantage.scss';
 
 import { PAD_WIDTH_WITHOUT } from '../../../utils/constants';
-import { ADVANTAGES } from './constants';
+import ADVANTAGES from './constants';
 
 const Advantage: React.FC = () => {
   const queryMediaMobile = `(max-width: ${PAD_WIDTH_WITHOUT}px)`;

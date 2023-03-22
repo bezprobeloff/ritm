@@ -1,6 +1,6 @@
 import React from 'react';
 import Line from '../../Line/Line';
-import { BUSINESS_ITEMS } from './constants';
+import BUSINESS_ITEMS from './constants';
 import { ReactComponent as BusinessLine } from '../../../images/business-line.svg';
 
 import './Business.scss';

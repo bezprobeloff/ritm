@@ -1,6 +1,6 @@
-import './FAQ.scss';
 import React from 'react';
-import { FAQ_ITEMS } from './constants';
+import './FAQ.scss';
+import FAQ_ITEMS from './constants';
 
 const FAQ: React.FC = () => {
   const faqItems = FAQ_ITEMS.map((item, index) => {

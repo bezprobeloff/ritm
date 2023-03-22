@@ -1,7 +1,7 @@
+import React from 'react';
 import '../../../styles/section.scss';
 import './Stages.scss';
-import React from 'react';
-import { STAGES } from './constants';
+import STAGES from './constants';
 
 const Stages: React.FC = () => {
   const stageItems = STAGES.map((item, indexItem) => {

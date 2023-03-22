@@ -39,4 +39,4 @@ const ADVANTAGES: TAdvantage[] = [
   }
 ];
 
-export { ADVANTAGES };
+export default ADVANTAGES;

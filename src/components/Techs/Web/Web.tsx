@@ -1,5 +1,5 @@
 import React from 'react';
-import { WEB_ITEMS } from './constants';
+import WEB_ITEMS from './constants';
 import '../../../styles/section.scss';
 import './Web.scss';
 import Line from '../../Line/Line';

@@ -61,4 +61,4 @@ const STAGES: TStage[] = [
   }
 ];
 
-export { STAGES };
+export default STAGES;

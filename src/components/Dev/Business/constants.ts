@@ -23,4 +23,4 @@ const BUSINESS_ITEMS: TBusiness[] = [
   }
 ];
 
-export { BUSINESS_ITEMS };
+export default BUSINESS_ITEMS;

@@ -10,4 +10,4 @@ const LINKS: TLinks[] = [
   { href: '#contacts', text: 'Контакты' }
 ];
 
-export { LINKS };
+export default LINKS;

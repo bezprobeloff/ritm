@@ -32,4 +32,4 @@ const TOOLS: TTool[] = [
   }
 ];
 
-export { TOOLS };
+export default TOOLS;

@@ -18,4 +18,4 @@ const WEB_ITEMS: TWeb[] = [
   }
 ];
 
-export { WEB_ITEMS };
+export default WEB_ITEMS;

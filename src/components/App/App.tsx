@@ -7,10 +7,12 @@ import Popup from '../Popup/Popup';
 import { getTest, sendForm } from '../../utils/ApiRitm';
 import { MESSAGE_SUCCESS } from '../../utils/constants';
 import { TDataFeedback } from '../../types/types';
+import Policy from '../Policy/Policy';
 
 interface TPopupPropsState {
   title?: string;
-  message: string;
+  message?: string;
+  component?: React.ReactNode;
 }
 
 function App() {
@@ -47,6 +49,15 @@ function App() {
     }
   };
 
+  const onClickPolicy = (evt: React.MouseEvent) => {
+    const componentPolicy = <Policy />;
+    evt.preventDefault();
+    setPopupProps({
+      component: componentPolicy
+    });
+    openPopup();
+  };
+
   return (
     <div className="App">
       <Header />
@@ -54,9 +65,14 @@ function App() {
         onSubmitFeedback={onSubmitFeedback}
         isPreloaderFeedbackEnabled={isPreloaderFeedbackEnabled}
       />
-      <Footer />
+      <Footer onClickPolicy={onClickPolicy} />
       {isPopupOpened && (
-        <Popup closePopup={closePopup} title={popupProps.title} message={popupProps.message} />
+        <Popup
+          closePopup={closePopup}
+          title={popupProps.title}
+          message={popupProps.message}
+          component={popupProps.component}
+        />
       )}
     </div>
   );

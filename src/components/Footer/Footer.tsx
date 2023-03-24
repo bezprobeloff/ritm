@@ -3,7 +3,11 @@ import './Footer.scss';
 import logo from '../../images/logo.svg';
 import Navigation from '../Navigation/Navigation';
 
-const Footer: React.FC = () => {
+interface IProps {
+  onClickPolicy: (evt: React.MouseEvent) => void;
+}
+
+const Footer: React.FC<IProps> = ({ onClickPolicy }) => {
   const classNav = 'footer__nav';
   const classLink = 'link footer__nav-link';
   return (
@@ -14,7 +18,7 @@ const Footer: React.FC = () => {
       <Navigation classNameNav={classNav} classNameLink={classLink} />
       <p className="footer__copyright">
         {new Date().getFullYear()} |{' '}
-        <a className="footer__copyright-link" href="/">
+        <a rel="nofollow" onClick={onClickPolicy} className="footer__copyright-link" href="/">
           Политика конфиденциальности персональных данных
         </a>
       </p>

@@ -4,11 +4,12 @@ import { KEYBOARD_KEYS } from '../../utils/constants';
 
 type TProps = {
   title?: string;
-  message: string;
+  message?: string;
+  component?: React.ReactNode;
   closePopup: () => void;
 };
 
-const Popup: React.FC<TProps> = ({ closePopup, title, message }) => {
+const Popup: React.FC<TProps> = ({ closePopup, title, message, component }) => {
   useEffect(() => {
     const handleEscPress = (event: KeyboardEvent) => {
       if (event.key === KEYBOARD_KEYS.ESCAPE) {
@@ -40,7 +41,8 @@ const Popup: React.FC<TProps> = ({ closePopup, title, message }) => {
           aria-label="Кнопка закрытия попапа"
         />
         {title && <h3 className="popup__title">{title}</h3>}
-        <p className="popup__message">{message}</p>
+        {message && <p className="popup__message">{message}</p>}
+        {component && component}
       </div>
     </div>
   );

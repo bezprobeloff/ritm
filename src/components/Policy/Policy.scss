@@ -1,13 +1,37 @@
 @import "../../styles/_variables.scss";
 
+.scroll {
+  @media screen and (min-width: $DESKTOP_MIN){
+    &::-webkit-scrollbar {
+      margin-left: 2px;
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $GRAY_LINE;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $BLACK;
+      border: 0.25em solid $WHITE;
+      border-radius: 100vw;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: black;
+    }
+  }
+}
+
+
 .policy {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   overflow: auto;
 
-  @media screen and (min-width: $PAD){
-
+  @media screen and (min-width: $DESKTOP_MIN){
+    padding: 0 10px;
   }
 
   &__title {

@@ -52,7 +52,7 @@ const Policy: React.FC = () => {
     );
   });
   return (
-    <div className="policy">
+    <div className="policy scroll">
       <h3 className="policy__title">Политика в отношении обработки персональных данных</h3>
       {politicElements}
     </div>

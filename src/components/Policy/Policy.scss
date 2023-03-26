@@ -31,4 +31,18 @@
       margin: 0 0 8px;
     }
   }
+
+  &__table {
+    border: 1px solid $WHITE;
+    border-collapse: collapse;
+    @include font_text(16px, 1.2, $GRAY_TEXT);
+    text-align: left;
+
+    &-cell {
+      padding: 5px;
+      border: 1px solid $WHITE;
+      vertical-align: top;
+      white-space: pre-line;
+    }
+  }
 }

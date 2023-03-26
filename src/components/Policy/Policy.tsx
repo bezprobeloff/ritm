@@ -24,11 +24,30 @@ const Policy: React.FC = () => {
         );
       });
 
+    const politicTableElement =
+      itemPolitic.table &&
+      itemPolitic.table.map((itemRow, indexRow) => {
+        const numberRow = indexRow + 1;
+        const politicTableKey = `politicTable${numberPolitic}_${numberRow}`;
+
+        return (
+          <tr key={politicTableKey}>
+            <td className="policy__table-cell">{itemRow.cell}</td>
+            <td className="policy__table-cell">{itemRow.cell2}</td>
+          </tr>
+        );
+      });
+
     return (
       <div key={politicKey} className="policy__item">
         <p className="policy__item-title">{title}</p>
         <p className="policy__item-text">{itemPolitic.subtitle}</p>
         {politicTextElements}
+        {itemPolitic.table && (
+          <table className="policy__table">
+            <tbody>{politicTableElement}</tbody>
+          </table>
+        )}
       </div>
     );
   });

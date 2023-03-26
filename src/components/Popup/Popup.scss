@@ -13,6 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
   background-color: rgba(25, 66, 116, .69);
   opacity: 0;
   animation: opacityAnimation .5s forwards;

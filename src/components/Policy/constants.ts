@@ -3,16 +3,16 @@ type TText = {
   text: string;
 };
 
-type TTable = {
-  text: string;
-  text2: string;
+type TRow = {
+  cell: string;
+  cell2: string;
 };
 
 interface TPolicy {
   title: string;
   subtitle?: string;
   texts?: TText[];
-  table?: TTable[];
+  table?: TRow[];
 }
 
 const POLITICS: TPolicy[] = [
@@ -351,8 +351,22 @@ const POLITICS: TPolicy[] = [
     title: 'Цели обработки персональных данных',
     table: [
       {
-        text: '',
-        text2: ''
+        cell: 'Цель обработки',
+        cell2: 'Связь с клиентом, оставившем заявку в форме обратной связи на сайте'
+      },
+      {
+        cell: 'Персональные данные',
+        cell2: 'Адрес электронной почты\nИмя пользователя'
+      },
+      {
+        cell: 'Правовые основания',
+        cell2:
+          'Федеральный закон «Об информации, информационных технологиях и о ' +
+          'защите информации» от 27.07.2006 N 149-ФЗ'
+      },
+      {
+        cell: 'Виды обработки персональных данных',
+        cell2: 'Отправка информационных писем на адрес электронной почты'
       }
     ]
   },

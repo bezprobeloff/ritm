@@ -49,6 +49,12 @@
       margin: 10px 0 10px;
     }
 
+    &-subtitle {
+      @include font_text(16px, 1.38, $GRAY_TEXT, 500);
+      text-align: left;
+      margin: 0 0 10px;
+    }
+
     &-text {
       @include font_text(16px, 1.38, $GRAY_TEXT);
       text-align: left;
@@ -61,6 +67,7 @@
     border-collapse: collapse;
     @include font_text(16px, 1.2, $GRAY_TEXT);
     text-align: left;
+    margin-bottom: 8px;
 
     &-cell {
       padding: 5px;

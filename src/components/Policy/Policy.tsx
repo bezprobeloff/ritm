@@ -41,7 +41,7 @@ const Policy: React.FC = () => {
     return (
       <div key={politicKey} className="policy__item">
         <p className="policy__item-title">{title}</p>
-        <p className="policy__item-text">{itemPolitic.subtitle}</p>
+        {itemPolitic.subtitle && <p className="policy__item-subtitle">{itemPolitic.subtitle}</p>}
         {politicTextElements}
         {itemPolitic.table && (
           <table className="policy__table">

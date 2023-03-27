@@ -24,6 +24,7 @@ function App() {
   });
   const closePopup = () => {
     setIsPopupOpened(false);
+    setPopupProps({});
   };
 
   const openPopup = () => {

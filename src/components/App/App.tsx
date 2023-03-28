@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import Popup from '../Popup/Popup';
-import { getTest, sendForm } from '../../utils/ApiRitm';
+import { sendForm } from '../../utils/ApiRitm';
 import { MESSAGE_SUCCESS } from '../../utils/constants';
 import { TDataFeedback } from '../../types/types';
 import Policy from '../Policy/Policy';
@@ -34,12 +34,7 @@ function App() {
   const onSubmitFeedback = async (dataForm: TDataFeedback) => {
     setIsPreloaderFeedbackEnabled(true);
     try {
-      // для теста попапа
-      const test = await getTest();
-      console.log(test);
-
-      // раскомментировать для отправки формы
-      // await sendForm(dataForm);
+      await sendForm(dataForm);
 
       setPopupProps({ title: MESSAGE_SUCCESS.title, message: MESSAGE_SUCCESS.message });
       openPopup();

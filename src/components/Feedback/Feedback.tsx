@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { PatternFormat } from 'react-number-format';
 import useForm from '../../utils/hooks/useForm';
 import Input from '../Inputs/Input/Input';
 import TextArea from '../Inputs/TextArea/TextArea';
@@ -63,14 +64,17 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
             validateAttributes={INPUT_NAME_ATTRIBUTES}
             onChange={form.handleChange}
           />
-          <Input
-            name={InputNames.USER_PHONE}
+          <PatternFormat
+            format="+7 (###) ###-##-##"
+            mask="_"
             value={form.values[InputNames.USER_PHONE] || ''}
+            customInput={Input}
+            onChange={form.handleChange}
             placeholderText="Телефон"
-            typeInput="tel"
             errors={form.errors}
             validateAttributes={INPUT_MOBILE_ATTRIBUTES}
-            onChange={form.handleChange}
+            name={InputNames.USER_PHONE}
+            typeInput="tel"
           />
           <Input
             name={InputNames.USER_EMAIL}

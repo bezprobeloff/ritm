@@ -116,6 +116,7 @@
           background-color: #161C1E;
           border-radius: 4px;
         }
+        
       }
 
       &-input:checked + &-text::before {
@@ -123,6 +124,10 @@
         background-repeat: no-repeat;
         background-size: 11px 9px;
         background-position: center;
+      }
+
+      &-input:focus-visible + &-text::before {
+        outline: 1px solid $BLUE;
       }
     }
 

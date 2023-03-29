@@ -14,3 +14,6 @@ export const MESSAGE_SUCCESS = {
   title: 'Спасибо!',
   message: 'Ваша заявка принята. Мы свяжемся с вами в ближайшее время.'
 };
+
+export const SPACE_KEY = ' ';
+export const ENTER_KEY = 'Enter';

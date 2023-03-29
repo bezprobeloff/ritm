@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { KeyboardEvent, SyntheticEvent, useRef } from 'react';
 import { PatternFormat } from 'react-number-format';
 import useForm from '../../utils/hooks/useForm';
 import Input from '../Inputs/Input/Input';
@@ -14,13 +14,15 @@ import {
   InputNames
 } from './constants';
 import { TDataFeedback } from '../../types/types';
+import { ENTER_KEY, SPACE_KEY } from '../../utils/constants';
 
 type PropTypes = {
   onSubmit: (dataForm: TDataFeedback) => void;
   isPreloaderEnabled: boolean;
+  onPolicyClick: (event: SyntheticEvent) => void;
 };
 
-const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
+const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled, onPolicyClick }) => {
   const formRef = useRef(null);
   const form = useForm(formRef);
 
@@ -42,6 +44,14 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
 
     onSubmit(dataForm);
     form.resetForm();
+  };
+
+  const handlePolicyKeydown = (event: KeyboardEvent) => {
+    if (![SPACE_KEY, ENTER_KEY].includes(event.key)) {
+      return;
+    }
+    event.preventDefault();
+    onPolicyClick(event);
   };
 
   return (
@@ -103,7 +113,16 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled }) => {
               required
             />
             <span className="feedback__form__checkbox-text">
-              Нажимая на кнопку, вы даете согласие на обработку своих персональных данных.
+              Нажимая на кнопку, вы даете согласие на обработку{' '}
+              <span
+                onClick={onPolicyClick}
+                onKeyDown={handlePolicyKeydown}
+                tabIndex={0}
+                role="button"
+                className="feedback__form__checkbox-policy"
+              >
+                персональных данных.
+              </span>
             </span>
           </label>
           {preloader}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import './App.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -45,7 +45,7 @@ function App() {
     }
   };
 
-  const onClickPolicy = (evt: React.MouseEvent) => {
+  const onClickPolicy = (evt: SyntheticEvent) => {
     const componentPolicy = <Policy />;
     evt.preventDefault();
     setPopupProps({
@@ -60,6 +60,7 @@ function App() {
       <Main
         onSubmitFeedback={onSubmitFeedback}
         isPreloaderFeedbackEnabled={isPreloaderFeedbackEnabled}
+        onPolicyClick={onClickPolicy}
       />
       <Footer onClickPolicy={onClickPolicy} />
       {isPopupOpened && (

@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import Popup from '../Popup/Popup';
 import { sendForm } from '../../utils/ApiRitm';
-import { MESSAGE_SUCCESS } from '../../utils/constants';
+import { MESSAGE_ERROR, MESSAGE_SUCCESS } from '../../utils/constants';
 import { TDataFeedback } from '../../types/types';
 import Policy from '../Policy/Policy';
 
@@ -39,7 +39,8 @@ function App() {
       setPopupProps({ title: MESSAGE_SUCCESS.title, message: MESSAGE_SUCCESS.message });
       openPopup();
     } catch (e) {
-      console.log('Ошибка');
+      setPopupProps({ title: MESSAGE_ERROR.title, message: MESSAGE_ERROR.message });
+      openPopup();
     } finally {
       setIsPreloaderFeedbackEnabled(false);
     }

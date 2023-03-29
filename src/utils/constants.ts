@@ -15,5 +15,11 @@ export const MESSAGE_SUCCESS = {
   message: 'Ваша заявка принята. Мы свяжемся с вами в ближайшее время.'
 };
 
+export const MESSAGE_ERROR = {
+  title: 'Oшибка!',
+  message:
+    'К сожалению Ваша заявка не отправлена. Пожалуйста, проверьте поля формы отбратной связи и попробуйте позже.'
+};
+
 export const SPACE_KEY = ' ';
 export const ENTER_KEY = 'Enter';

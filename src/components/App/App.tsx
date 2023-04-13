@@ -36,7 +36,6 @@ function App() {
     try {
       // для теста попапа
       const test = await getTest();
-      console.log(test);
 
       // раскомментировать для отправки формы
       // await sendForm(dataForm);

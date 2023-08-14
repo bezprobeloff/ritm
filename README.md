@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+<h1 align="center">RITM</h1>
+<p align="center">
+    <img alt="Version" src="https://img.shields.io/github/package-json/v/bezprobeloff/ritm" />
+    <img alt="Quality" src="https://img.shields.io/badge/status-release-orange.svg" >
+    <img alt="Made by: Bezprobeloff" src="https://img.shields.io/badge/made%20by-Bezprobeloff-blue" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+**Обзор**
 
-In the project directory, you can run:
+Ссылка на демо __RITM__: https://ritm.bezprobeloff.ru/
 
-### `npm start`
+**Технологии**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Использованы следующие технологии:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* __Flex__, __Grid__
+* __SASS__
+* Методология __БЭМ__
+* __Семантическая__ вёрстка
+* __Адаптивность__ с использованием "резиновости"
+* __React__ технологии
+  * хуки: useState, useEffect, useLocation, useHistory
+  * кастомные хуки
+  * функциональные компоненты
+* __TypeScript__
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Установка**
+
+Установить Node.js и запустить в корневом каталоге проекта:
+
+###  `npm install`
+
+
+**Скрипты**
+
+###  `npm start`
+Запуск в режиме разработки, в браузере автоматически откроется по такому адресу [http://localhost:8080/](http://localhost:8080/)
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Сборка приложения в папку `build`

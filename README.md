@@ -8,7 +8,7 @@
 
 **Обзор**
 
-Ссылка на демо __RITM__: https://ritm.bezprobeloff.ru/
+Ссылка на демо __RITM__: https://ritm-phi.vercel.app/#techs
 
 **Технологии**
 
